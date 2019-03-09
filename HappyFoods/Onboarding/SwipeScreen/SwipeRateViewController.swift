@@ -11,6 +11,12 @@ import CoreData
 
 class SwipeRateViewController: UIViewController {
     
+    let foodImage: UIImageView = {
+        let theImageView = UIImageView()
+        theImageView.translatesAutoresizingMaskIntoConstraints = false
+        return theImageView
+    }()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
@@ -24,6 +30,8 @@ class SwipeRateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(foodImage)
+        someImageViewConstraints()
         preloadData()
         
 //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
@@ -31,6 +39,14 @@ class SwipeRateViewController: UIViewController {
 //            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Tutorial3")
 //            self.present(newViewController, animated: true, completion: nil)
 //        }
+    }
+    
+    // do not forget the `.isActive = true` after every constraint
+    func someImageViewConstraints() {
+        foodImage.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        foodImage.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        foodImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        foodImage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 28).isActive = true
     }
     
     func loadItems(){
@@ -82,7 +98,7 @@ class SwipeRateViewController: UIViewController {
         unratedFood = foodArray.filter{$0.rating == 0}
         currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
         currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
-        //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+        foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
     }
 
     func removeData () {

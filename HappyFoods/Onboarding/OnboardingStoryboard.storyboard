@@ -14,7 +14,7 @@
         <scene sceneID="IjW-sq-ZjL">
             <objects>
                 <viewController storyboardIdentifier="Tutorial2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uoT-bZ-sYf" customClass="SwipeRateViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Bg-zt-0ey" customClass="SwipeScreenView" customModule="HappyFoods" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="2Bg-zt-0ey">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

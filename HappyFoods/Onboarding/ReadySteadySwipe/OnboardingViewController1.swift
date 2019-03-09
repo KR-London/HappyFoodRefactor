@@ -14,7 +14,7 @@ class OnboardingViewController1: UIViewController {
         super.viewDidLoad()
     
         // commented out while I work on just this one 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             let storyBoard: UIStoryboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Tutorial2")
             self.present(newViewController, animated: true, completion: nil)
