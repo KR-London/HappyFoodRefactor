@@ -13,39 +13,45 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             // Override point for customization after application launch.
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
                 let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        
-                /// for testing
-                let launchedBefore2 = false
-        
-                if launchedBefore2{
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen" )
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
-        
-                }
-                else
-                {
-                    UserDefaults.standard.set(true, forKey: "launchedBefore")
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-                    let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
-        
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
-        
-                }
+
+//                /// for testing
+//                let launchedBefore2 = false
+//
+//                if launchedBefore2{
+//                    self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen" )
+//                    self.window?.rootViewController = initialViewController
+//                    self.window?.makeKeyAndVisible()
+//
+//                }
+//                else
+//                {
+//                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+//                    self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//                    let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
+//
+//                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
+//                    self.window?.rootViewController = initialViewController
+//                    self.window?.makeKeyAndVisible()
+//
+//                }
         
         
         return true
