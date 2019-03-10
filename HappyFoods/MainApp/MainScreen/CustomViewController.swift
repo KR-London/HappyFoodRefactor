@@ -25,7 +25,6 @@ class CustomViewController: UIViewController {
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "Bad.png")!)
         scrollView.contentSize = CGSize(width: view.bounds.width, height: 1.2*view.bounds.height)
-        
    
         
         scrollView.addSubview(containerYes)

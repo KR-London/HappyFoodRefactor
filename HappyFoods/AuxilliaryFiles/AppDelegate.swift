@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
-        
-                let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+//        
+//                let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
 
 //                /// for testing
 //                let launchedBefore2 = false

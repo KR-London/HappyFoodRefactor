@@ -33,7 +33,22 @@ class SwipeRateViewController: UIViewController {
         view.addSubview(foodImage)
         someImageViewConstraints()
         preloadData()
-        
+        loadItems()
+        unratedFood = foodArray.filter{$0.rating == 0}
+        if unratedFood.count == 0
+        {
+            transitionToRibbonsStoryboard()
+        }
+        else
+        {
+            currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
+            currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
+            let image = UIImage(named: currentlyPicturedFood.image_file_name!)
+            let maskingImage = UIImage(named: "MASK.png")
+            foodImage.image = maskImage(image: image!, mask: maskingImage!)
+            //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+            
+        }
 //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
 //            let storyBoard: UIStoryboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
 //            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Tutorial3")
@@ -69,6 +84,46 @@ class SwipeRateViewController: UIViewController {
 
         }
     }
+    
+    func updatePicture(){
+        saveItems()
+        //        ///future self, please add some code to handle the case where there are no unrated foods/ to allow for previously rated foods to be presented.
+        /// filter food array so you're only seeing unrated ones
+        unratedFood = unratedFood.filter{$0 != currentlyPicturedFood}
+        
+        /// this is the fade out of the frame prompting you what the directions are
+        //        if instructions.alpha > 0
+        //        {
+        //            instructions.alpha = instructions.alpha - 0.1
+        //        }
+        //
+        
+        if unratedFood.count == 0 {
+            
+            transitionToRibbonsStoryboard()
+            return
+            
+        }
+        if unratedFood.count > 1
+        { /// load a picuture of a random one of these
+            //currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
+            
+            //  debugging
+            //currentlyPicturedFoodIndex = counter
+            // currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
+            currentlyPicturedFood = unratedFood.last
+            //  counter = counter + 1
+        }
+        else
+        {
+            currentlyPicturedFood = unratedFood[0]
+        }
+        // foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+        
+        let image = UIImage(named: currentlyPicturedFood.image_file_name!)
+        let maskingImage = UIImage(named: "MASK.png")
+        foodImage.image = maskImage(image: image!, mask: maskingImage!)
+    }
 
     func preloadData () {
         // Retrieve data from the source file
@@ -99,6 +154,27 @@ class SwipeRateViewController: UIViewController {
         currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
         currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
         foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+    
+        /// define swipe directions
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+        
+    
     }
 
     func removeData () {
@@ -185,5 +261,79 @@ class SwipeRateViewController: UIViewController {
         return items
     }
 
+@objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+    if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+        
+        foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
+        updatePicture()
+        
+    }
+    else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+        print("Swipe Left")
+        
+        foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
+        updatePicture()
+    }
+    else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
+       print("Swipe Up")
+        
+        
+        foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
+        updatePicture()
+    }
+    else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
+       print("Swipe Down")
+        
+        foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
+        updatePicture()
+        //self.storyboard
+        
+        
+        
+        
+        //onButtonTapped()
+        // performSegue(withIdentifier: goToData, sender: self)
+    }
 }
 
+func transitionToRibbonsStoryboard(){
+    
+    // performSegue(withIdentifier: "GoToMotivation", sender: self)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() ){
+        self.performSegue(withIdentifier: "goToMotivation", sender: self)
+    }
+    
+    //        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    //
+    //        guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "tellMeMotivation") as? MotivationViewController
+    //            else
+    //        {
+    //            print("Couldn't find view controller")
+    //            return
+    //        }
+    //
+    //        navigationController?.pushViewController(destinationVC, animated: true)
+}
+    
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
+    }
+
+
+}
