@@ -15,7 +15,7 @@
             <objects>
                 <collectionViewController title="Maybe Collection View Controller" id="lkN-xG-NO6" customClass="MaybeCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="M7G-uT-eOH">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="137"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dZR-2c-I2U">
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Maybe.png" id="2kO-IZ-IW3">
-                            <rect key="frame" x="0.0" y="0.0" width="340" height="137"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -62,7 +62,7 @@
             <objects>
                 <collectionViewController title="No Collection View Controller" id="6V0-DE-PIY" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tac-VX-D7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WCB-YD-UXn">
@@ -72,7 +72,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bad.png" id="q8k-E5-2MZ">
-                            <rect key="frame" x="0.0" y="0.0" width="340" height="140"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -112,46 +112,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipp-Eq-r3b">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipp-Eq-r3b">
                                 <rect key="frame" x="-16" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSm-YH-cfu">
-                                        <rect key="frame" x="16" y="28" width="340" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="sh4-JI-7nd" kind="embed" id="Nuh-hg-DPl"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-Z1-cwW">
-                                        <rect key="frame" x="16" y="156" width="340" height="133"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="aQA-9E-BLP" kind="embed" id="ajM-dY-sGb"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYn-Zb-Kj1">
-                                        <rect key="frame" x="16" y="290" width="340" height="137"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="lkN-xG-NO6" kind="embed" id="UCg-s2-M20"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-xq-gpT">
-                                        <rect key="frame" x="16" y="427" width="340" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="6V0-DE-PIY" kind="embed" id="TZI-mW-tb1"/>
-                                        </connections>
-                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-rQ-L7A">
+                                        <rect key="frame" x="317" y="28" width="50" height="632"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSm-YH-cfu">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                                                <connections>
+                                                    <segue destination="sh4-JI-7nd" kind="embed" id="Nuh-hg-DPl"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-Z1-cwW">
+                                                <rect key="frame" x="0.0" y="164" width="50" height="140"/>
+                                                <connections>
+                                                    <segue destination="aQA-9E-BLP" kind="embed" id="ajM-dY-sGb"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYn-Zb-Kj1">
+                                                <rect key="frame" x="0.0" y="328" width="50" height="140"/>
+                                                <connections>
+                                                    <segue destination="lkN-xG-NO6" kind="embed" id="UCg-s2-M20"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-xq-gpT">
+                                                <rect key="frame" x="0.0" y="492" width="50" height="140"/>
+                                                <connections>
+                                                    <segue destination="6V0-DE-PIY" kind="embed" id="TZI-mW-tb1"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ipp-Eq-r3b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W1H-9b-mXW"/>
-                            <constraint firstItem="ipp-Eq-r3b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="swS-X2-5sY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ipp-Eq-r3b" secondAttribute="trailing" id="vzt-v4-kSy"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -160,6 +158,7 @@
                         <outlet property="containerTarget" destination="EFv-Z1-cwW" id="mHE-iC-CNG"/>
                         <outlet property="containerYes" destination="XSm-YH-cfu" id="jA4-yQ-Uks"/>
                         <outlet property="scrollView" destination="ipp-Eq-r3b" id="T9o-6m-EOT"/>
+                        <outlet property="stackView" destination="kYn-rQ-L7A" id="GZj-Fi-75F"/>
                         <segue destination="z5Q-Dd-hOy" kind="presentation" identifier="goToCamera" id="L1W-Z0-jQ3"/>
                     </connections>
                 </viewController>
@@ -211,7 +210,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="greenScreen" id="sh4-JI-7nd" customClass="YesCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XMD-Bq-cWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="03e-oS-rvp">
@@ -221,7 +220,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Good.png" id="Euy-B4-Irn">
-                            <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -258,7 +257,7 @@
             <objects>
                 <collectionViewController title="Target View Controller" id="aQA-9E-BLP" customClass="TargetCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3VC-al-XHE">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="133"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rg6-eK-78c">
@@ -268,7 +267,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trying.png" id="bTI-13-MbG">
-                            <rect key="frame" x="0.0" y="0.0" width="340" height="133"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>

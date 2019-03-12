@@ -16,6 +16,7 @@ class CustomViewController: UIViewController {
     @IBOutlet var containerTarget: UIView!
     @IBOutlet var containerMaybe: UIView!
     @IBOutlet var containerNo: UIView!
+    @IBOutlet var stackView: UIStackView!
     
 
     override func viewDidLoad() {
@@ -33,21 +34,34 @@ class CustomViewController: UIViewController {
    
 
         
-       // stackView.addSubview(containerYes)
-       // stackView.addSubview(containerTarget)
-       // stackView.addSubview(containerMaybe)
-       // stackView.addSubview(containerNo)
-    
+        stackView.addSubview(containerYes)
+        stackView.addSubview(containerTarget)
+        stackView.addSubview(containerMaybe)
+        stackView.addSubview(containerNo)
         
-        scrollView.addSubview(containerYes)
-        scrollView.addSubview(containerTarget)
-        scrollView.addSubview(containerMaybe)
-        scrollView.addSubview(containerNo)
+    
+        scrollView.addSubview(stackView)
+        
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).isActive = true
+//        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0).isActive = true
+//        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
+//        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
+        
+//        scrollView.addSubview(containerYes)
+//        scrollView.addSubview(containerTarget)
+//        scrollView.addSubview(containerMaybe)
+//        scrollView.addSubview(containerNo)
         self.view.addSubview(scrollView)
         
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
-        
-        
+//        stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+//
         // constrain the scroll view to 8-pts on each side
        // scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
       //  scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).isActive = true
