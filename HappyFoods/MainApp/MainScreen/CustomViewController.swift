@@ -17,15 +17,27 @@ class CustomViewController: UIViewController {
     @IBOutlet var containerMaybe: UIView!
     @IBOutlet var containerNo: UIView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.isUserInteractionEnabled = true
+ 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleGesture) )
+        self.view.addGestureRecognizer(tap)
+        
         /// I like it in a scroll view so that I'm not wasting valuable screen space on the negative! I hide the 'no' ribbon.
         scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "Bad.png")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "chaos.jpg")!)
         scrollView.contentSize = CGSize(width: view.bounds.width, height: 1.2*view.bounds.height)
    
+
+        
+       // stackView.addSubview(containerYes)
+       // stackView.addSubview(containerTarget)
+       // stackView.addSubview(containerMaybe)
+       // stackView.addSubview(containerNo)
+    
         
         scrollView.addSubview(containerYes)
         scrollView.addSubview(containerTarget)
@@ -44,5 +56,11 @@ class CustomViewController: UIViewController {
 
     }
     
+   
+    @objc func handleGesture() -> Void {
+        print("I hear you")
+            //onButtonTapped()
+            // performSegue(withIdentifier: goToData, sender: self)
+        }
+    }
 
-}

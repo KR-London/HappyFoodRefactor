@@ -7,21 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "maybeCell"
 
 class MaybeCollectionViewController: UICollectionViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var food: [NSManagedObject] = []
+    var foodArray: [Food]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        loadItems()
+        foodArray = foodArray.filter{ $0.rating == 2}
+        
     }
 
     /*
@@ -38,18 +38,24 @@ class MaybeCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return foodArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
     
+        let cellContentsIndex = indexPath.row
+        if cellContentsIndex <= foodArray.count
+        {
+            let plate = foodArray[cellContentsIndex]
+            cell.displayContent(image: plate.image_file_name ?? "chaos.jpg")
+        }
         // Configure the cell
     
         return cell
@@ -86,4 +92,17 @@ class MaybeCollectionViewController: UICollectionViewController {
     }
     */
 
+    func loadItems(){
+        
+        let request : NSFetchRequest<Food> = Food.fetchRequest()
+        do{
+            try
+                foodArray = context.fetch(request)
+        }
+        catch
+        {
+            print("Error fetching data \(error)")
+        }
+        
+    }
 }

@@ -22,6 +22,12 @@ class SwipeScreenView: UIView {
         return contentView
     }()
     
+    lazy var instructionView: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "Thingy.png")
+        return contentView
+    }()
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,6 +41,17 @@ class SwipeScreenView: UIView {
                 backgroundView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
             ]
         )
+     
+        addSubview(instructionView)
+       instructionView.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate(
+                    [
+                        instructionView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                        instructionView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                        instructionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
+                        instructionView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor)
+                    ]
+                )
     }
 
 }

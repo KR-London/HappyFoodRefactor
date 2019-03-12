@@ -19,12 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen" )
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+        
+        
+//        let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
 //        
+//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
+//        self.window?.rootViewController = initialViewController
+//        self.window?.makeKeyAndVisible()
+////        
 //                let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
 
 //                /// for testing

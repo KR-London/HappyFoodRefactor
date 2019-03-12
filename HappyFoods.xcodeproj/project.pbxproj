@@ -73,6 +73,9 @@
 		44803CC521F1E99E0053AECB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44803CC421F1E99E0053AECB /* CustomViewController.swift */; };
 		4497E28C2209D07000254128 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28B2209D07000254128 /* CameraViewController.swift */; };
 		4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28E2209DB8C00254128 /* OnboardingView1.swift */; };
+		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
+		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
+		44A27FBC223819BF00244A96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBB223819BF00244A96 /* MainViewController.swift */; };
 		44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6332231341200A96B28 /* OnboardingView2.swift */; };
 		44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6362231349200A96B28 /* OnboardingView3.swift */; };
 		44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D639223134CB00A96B28 /* SwipeScreenView.swift */; };
@@ -163,6 +166,9 @@
 		44803CC421F1E99E0053AECB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		4497E28B2209D07000254128 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4497E28E2209DB8C00254128 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
+		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
+		44A27FBB223819BF00244A96 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		44B3D6332231341200A96B28 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		44B3D6362231349200A96B28 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
 		44B3D639223134CB00A96B28 /* SwipeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenView.swift; sourceTree = "<group>"; };
@@ -391,7 +397,10 @@
 		44B3D6412232B90C00A96B28 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				44A27FBB223819BF00244A96 /* MainViewController.swift */,
+				44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */,
 				44803CC421F1E99E0053AECB /* CustomViewController.swift */,
+				44A27FB72237F4DB00244A96 /* CustomViewController2.swift */,
 				447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */,
 				447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */,
 				447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */,
@@ -559,13 +568,16 @@
 				44803CBC21F1E8AC0053AECB /* OnboardingViewController1.swift in Sources */,
 				447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */,
 				44803C9B21F1DB660053AECB /* HappyFoods.xcdatamodeld in Sources */,
+				44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */,
 				447ACD4A22340BEC001748D3 /* MaybeCollectionViewController.swift in Sources */,
 				44803C9321F1DB660053AECB /* AppDelegate.swift in Sources */,
 				44803CC021F1E8DE0053AECB /* OnboardingViewController2.swift in Sources */,
+				44A27FBC223819BF00244A96 /* MainViewController.swift in Sources */,
 				44B3D6402232B8FF00A96B28 /* CustomView.swift in Sources */,
 				44B3D6432232B92900A96B28 /* CongratulationView.swift in Sources */,
 				44803CBE21F1E8CC0053AECB /* SwipeRateViewController.swift in Sources */,
 				44803CC521F1E99E0053AECB /* CustomViewController.swift in Sources */,
+				44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */,
 				4497E28C2209D07000254128 /* CameraViewController.swift in Sources */,
 				4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */,
 				4403E65D220AEDE9000B5BAE /* Extensions_UIImage.swift in Sources */,

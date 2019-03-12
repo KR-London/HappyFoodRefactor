@@ -29,6 +29,7 @@ class SwipeRateViewController: UIViewController {
     var unratedFood: [Food]!
 
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         view.addSubview(foodImage)
         someImageViewConstraints()
@@ -97,6 +98,10 @@ class SwipeRateViewController: UIViewController {
         //            instructions.alpha = instructions.alpha - 0.1
         //        }
         //
+
+        
+    
+        
         
         if unratedFood.count == 0 {
             
@@ -269,21 +274,14 @@ class SwipeRateViewController: UIViewController {
         
     }
     else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
-        print("Swipe Left")
-        
         foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
         updatePicture()
     }
     else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
-       print("Swipe Up")
-        
-        
         foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
         updatePicture()
     }
     else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
-       print("Swipe Down")
-        
         foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
         updatePicture()
         //self.storyboard
