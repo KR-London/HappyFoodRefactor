@@ -108,7 +108,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainScreen" title="Main" id="BYZ-38-t0r" customClass="CustomViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="HappyFoods" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -159,7 +159,7 @@
                         <outlet property="containerYes" destination="XSm-YH-cfu" id="jA4-yQ-Uks"/>
                         <outlet property="scrollView" destination="ipp-Eq-r3b" id="T9o-6m-EOT"/>
                         <outlet property="stackView" destination="kYn-rQ-L7A" id="GZj-Fi-75F"/>
-                        <segue destination="z5Q-Dd-hOy" kind="presentation" identifier="goToCamera" id="L1W-Z0-jQ3"/>
+                        <segue destination="z5Q-Dd-hOy" kind="show" identifier="goToCamera" id="L1W-Z0-jQ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -314,14 +314,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df0-oN-kIv">
+                                <rect key="frame" x="16" y="500" width="174" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="QQT-V9-45a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GLZ-ie-aKQ"/>
+                        <connections>
+                            <outlet property="buttonOutlet" destination="df0-oN-kIv" id="Qwh-XK-bWB"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5M-9c-Un3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-414"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="-414.24287856071965"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vqs-Mk-CoB">
@@ -342,6 +353,7 @@
         <image name="Bad.png" width="2100" height="658"/>
         <image name="Good.png" width="2100" height="658"/>
         <image name="Maybe.png" width="2100" height="1316"/>
+        <image name="back.png" width="203" height="203"/>
         <image name="trying.png" width="2100" height="658"/>
     </resources>
 </document>

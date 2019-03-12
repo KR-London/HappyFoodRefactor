@@ -1,17 +1,19 @@
 //
-//  CustomView.swift
+//  MainView.swift
 //  HappyFoods
 //
-//  Created by Kate Roberts on 08/03/2019.
+//  Created by Kate Roberts on 12/03/2019.
 //  Copyright © 2019 Kate Roberts. All rights reserved.
 //
 
 import UIKit
 
-class CustomView: UIView {
+class MainView: UIView {
+
 
     override init(frame: CGRect){
         super.init(frame: frame)
+        setupView()
     }
     
     
@@ -19,4 +21,7 @@ class CustomView: UIView {
         super.init(coder: aDecoder)
     }
     
+    private func setupView(){
+        backgroundColor = UIColor.cyan
+    }
 }

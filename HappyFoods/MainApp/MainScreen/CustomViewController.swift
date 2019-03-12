@@ -21,11 +21,9 @@ class CustomViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.isUserInteractionEnabled = true
- 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleGesture) )
-        self.view.addGestureRecognizer(tap)
+
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(sender: )) )
+        self.view.addGestureRecognizer(pinch)
         
         /// I like it in a scroll view so that I'm not wasting valuable screen space on the negative! I hide the 'no' ribbon.
         scrollView = UIScrollView(frame: view.bounds)
@@ -42,16 +40,6 @@ class CustomViewController: UIViewController {
     
         scrollView.addSubview(stackView)
         
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).isActive = true
-//        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0).isActive = true
-//        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
-//        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
-        
-//        scrollView.addSubview(containerYes)
-//        scrollView.addSubview(containerTarget)
-//        scrollView.addSubview(containerMaybe)
-//        scrollView.addSubview(containerNo)
         self.view.addSubview(scrollView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,21 +48,17 @@ class CustomViewController: UIViewController {
         stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
-//        stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//
-        // constrain the scroll view to 8-pts on each side
-       // scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-      //  scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).isActive = true
-       // scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0.0).isActive = true
-      //  scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 20.0).isActive = true
 
     }
     
-   
-    @objc func handleGesture() -> Void {
-        print("I hear you")
-            //onButtonTapped()
-            // performSegue(withIdentifier: goToData, sender: self)
+
+    
+    @objc func handlePinchGesture(sender: UIPinchGestureRecognizer) -> Void {
+        print("That pinches!")
+        if sender.state == .ended
+        {
+            performSegue(withIdentifier: "goToCamera", sender: self)
         }
+    }
     }
 

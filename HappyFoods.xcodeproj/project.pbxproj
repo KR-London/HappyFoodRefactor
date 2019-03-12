@@ -76,6 +76,7 @@
 		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
 		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
 		44A27FBC223819BF00244A96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBB223819BF00244A96 /* MainViewController.swift */; };
+		44A27FBE2238239600244A96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBD2238239600244A96 /* MainView.swift */; };
 		44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6332231341200A96B28 /* OnboardingView2.swift */; };
 		44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6362231349200A96B28 /* OnboardingView3.swift */; };
 		44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D639223134CB00A96B28 /* SwipeScreenView.swift */; };
@@ -169,6 +170,7 @@
 		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
 		44A27FBB223819BF00244A96 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		44A27FBD2238239600244A96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		44B3D6332231341200A96B28 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		44B3D6362231349200A96B28 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
 		44B3D639223134CB00A96B28 /* SwipeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				4403E65E220AEEA9000B5BAE /* Extensions */,
 				44803CBA21F1E83B0053AECB /* AuxilliaryFiles */,
 				44803CA121F1DB680053AECB /* Info.plist */,
+				44A27FBF223823AA00244A96 /* CodeExperiments */,
 			);
 			path = HappyFoods;
 			sourceTree = "<group>";
@@ -358,6 +361,15 @@
 			path = ReadySteadySwipe;
 			sourceTree = "<group>";
 		};
+		44A27FBF223823AA00244A96 /* CodeExperiments */ = {
+			isa = PBXGroup;
+			children = (
+				44A27FBB223819BF00244A96 /* MainViewController.swift */,
+				44A27FB72237F4DB00244A96 /* CustomViewController2.swift */,
+			);
+			path = CodeExperiments;
+			sourceTree = "<group>";
+		};
 		44B3D6352231341A00A96B28 /* After_Swipe_Congratulation */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,10 +409,9 @@
 		44B3D6412232B90C00A96B28 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				44A27FBB223819BF00244A96 /* MainViewController.swift */,
 				44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */,
 				44803CC421F1E99E0053AECB /* CustomViewController.swift */,
-				44A27FB72237F4DB00244A96 /* CustomViewController2.swift */,
+				44A27FBD2238239600244A96 /* MainView.swift */,
 				447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */,
 				447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */,
 				447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */,
@@ -559,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447ACD4C22340BFF001748D3 /* NoCollectionViewController.swift in Sources */,
+				44A27FBE2238239600244A96 /* MainView.swift in Sources */,
 				44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */,
 				447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */,
 				44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */,

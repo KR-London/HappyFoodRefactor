@@ -11,6 +11,7 @@ import UIKit
 class CameraView: UIView {
   
     weak var imageView: UIView!
+    @IBOutlet weak var buttonOutlet: UIButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -28,6 +29,9 @@ class CameraView: UIView {
         
         /// place in the background image, centred.
         addSubview(backgroundView)
+        self.sendSubviewToBack(backgroundView)
+        
+        
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
