@@ -38,21 +38,21 @@ class CustomViewController2: UIViewController {
 //
        // let childVC = YesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
-        let childVC = OnboardingViewController2()
-        
-        self.addChild(childVC)
-        
-        //self.addChild(YesCollectionViewController)
-        // Register child VC
-        childVC.didMove(toParent: self)
-        
-        NSLayoutConstraint.activate([
-            childVC.view.widthAnchor.constraint(equalToConstant: 100),
-             childVC.view.heightAnchor.constraint(equalToConstant: 100),
-           // childVC.topAnchor.constraint(equalTo: scrollView.topAnchor),
-          //  childVC.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-          // childVC.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-            ])
+//        let childVC = OnboardingViewController2()
+//        
+//        self.addChild(childVC)
+//        
+//        //self.addChild(YesCollectionViewController)
+//        // Register child VC
+//        childVC.didMove(toParent: self)
+//        
+//        NSLayoutConstraint.activate([
+//            childVC.view.widthAnchor.constraint(equalToConstant: 100),
+//             childVC.view.heightAnchor.constraint(equalToConstant: 100),
+//           // childVC.topAnchor.constraint(equalTo: scrollView.topAnchor),
+//          //  childVC.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+//          // childVC.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+//            ])
         
 //        // Setup constraints for layout
 //        childVC.view.translatesAutoresizingMaskIntoConstraints = false

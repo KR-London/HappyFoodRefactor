@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e0r-YJ-N9f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,9 +13,9 @@
         <!--Maybe Collection View Controller-->
         <scene sceneID="X3l-hR-Typ">
             <objects>
-                <collectionViewController title="Maybe Collection View Controller" id="lkN-xG-NO6" customClass="MaybeCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="amberScreen" title="Maybe Collection View Controller" id="lkN-xG-NO6" customClass="MaybeCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="M7G-uT-eOH">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dZR-2c-I2U">
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Maybe.png" id="2kO-IZ-IW3">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -60,9 +60,9 @@
         <!--No Collection View Controller-->
         <scene sceneID="7rf-KN-uki">
             <objects>
-                <collectionViewController title="No Collection View Controller" id="6V0-DE-PIY" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="redScreen" title="No Collection View Controller" id="6V0-DE-PIY" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tac-VX-D7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WCB-YD-UXn">
@@ -72,7 +72,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bad.png" id="q8k-E5-2MZ">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -102,7 +102,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IV-Hb-h8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2106" y="-48"/>
+            <point key="canvasLocation" x="-2107" y="-302"/>
         </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1287.2" y="-414.24287856071965"/>
+            <point key="canvasLocation" x="-719" y="-414"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="6wI-On-v99">
@@ -190,27 +190,82 @@
             </objects>
             <point key="canvasLocation" x="-2450" y="-1808"/>
         </scene>
-        <!--Custom View Controller2-->
-        <scene sceneID="Vfr-zj-l0n">
+        <!--Main View Controller-->
+        <scene sceneID="vLX-po-XMi">
             <objects>
-                <viewController storyboardIdentifier="testing" id="e0r-YJ-N9f" customClass="CustomViewController2" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wnj-kv-xfA">
+                <viewController storyboardIdentifier="wednesdayTesting " id="1Wv-wj-gyF" customClass="MainViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2z-vn-bxo" customClass="MainView" customModule="HappyFoods" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="21A-hJ-Yk2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytP-Hh-bGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1708" y="-1871"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vfr-zj-l0n">
+            <objects>
+                <viewController storyboardIdentifier="testing" id="e0r-YJ-N9f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wnj-kv-xfA" customClass="MainView" customModule="HappyFoods" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3pA-Av-nDy">
+                                <rect key="frame" x="16" y="29" width="343" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.76078431369999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="sh4-JI-7nd" kind="embed" id="hb0-YH-rwt"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8y-OI-aGW">
+                                <rect key="frame" x="16" y="176" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.91890459359999999" blue="0.44117262569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="aQA-9E-BLP" kind="embed" id="pIv-EN-qGh"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-8V-9S8">
+                                <rect key="frame" x="16" y="499" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.31372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="6V0-DE-PIY" kind="embed" id="Tzw-gw-UnT"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6z-IO-ezw">
+                                <rect key="frame" x="16" y="330" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="lkN-xG-NO6" kind="embed" id="lLL-SI-o4I"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wPP-rS-iuG"/>
+                        <connections>
+                            <outlet property="maybeContainer" destination="Q6z-IO-ezw" id="QEz-aM-dYx"/>
+                            <outlet property="noContainer" destination="QA0-8V-9S8" id="Yib-RR-AU2"/>
+                            <outlet property="targetContainer" destination="G8y-OI-aGW" id="5E0-Aa-Zf1"/>
+                            <outlet property="yesContainer" destination="3pA-Av-nDy" id="p2a-df-2uN"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPG-Jk-b4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="-1316"/>
+            <point key="canvasLocation" x="-1439" y="-602"/>
         </scene>
         <!--Yes Collection View Controller-->
         <scene sceneID="UEA-VR-FA7">
             <objects>
                 <collectionViewController storyboardIdentifier="greenScreen" id="sh4-JI-7nd" customClass="YesCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XMD-Bq-cWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="03e-oS-rvp">
@@ -220,7 +275,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Good.png" id="Euy-B4-Irn">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -250,14 +305,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVi-3b-AtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2163" y="-937"/>
+            <point key="canvasLocation" x="-2147" y="-918"/>
         </scene>
         <!--Target View Controller-->
         <scene sceneID="6XK-YR-5hu">
             <objects>
-                <collectionViewController title="Target View Controller" id="aQA-9E-BLP" customClass="TargetCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="tryingScreen" title="Target View Controller" id="aQA-9E-BLP" customClass="TargetCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3VC-al-XHE">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rg6-eK-78c">
@@ -267,7 +322,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trying.png" id="bTI-13-MbG">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="140"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -297,7 +352,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRu-3P-KXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2134" y="-724"/>
+            <point key="canvasLocation" x="-2147" y="-712"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="mwD-mF-1WC">
@@ -356,4 +411,11 @@
         <image name="back.png" width="203" height="203"/>
         <image name="trying.png" width="2100" height="658"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="L1W-Z0-jQ3"/>
+        <segue reference="pIv-EN-qGh"/>
+        <segue reference="hb0-YH-rwt"/>
+        <segue reference="Tzw-gw-UnT"/>
+        <segue reference="lLL-SI-o4I"/>
+    </inferredMetricsTieBreakers>
 </document>
