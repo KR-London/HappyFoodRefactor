@@ -9,63 +9,26 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    
-    lazy var yesVC: YesCollectionViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "greenScreen") as! YesCollectionViewController
-
-        self.addChildViewControllerCustom(childViewController: viewController)
-        return viewController
-    }()
-
-    lazy var targetVC: TargetCollectionViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "tryingScreen") as! TargetCollectionViewController
-
-        self.addChildViewControllerCustom(childViewController: viewController)
-        return viewController
-    }()
-
-    lazy var maybeVC: MaybeCollectionViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "amberScreen") as! MaybeCollectionViewController
-
-        self.addChildViewControllerCustom(childViewController: viewController)
-        return viewController
-    }()
-
-    lazy var noVC: NoCollectionViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "redScreen") as! NoCollectionViewController
-
-        self.addChildViewControllerCustom(childViewController: viewController)
-        return viewController
-    }()
-
-//    lazy var stackView: UIStackView = {
-//            let sv = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
-//            sv.translatesAutoresizingMaskIntoConstraints = false
-//            sv.axis = .vertical
-//            sv.spacing = 0
-//            sv.distribution = .fillEqually
-//            return sv
-//        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
+        let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
+        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
+        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? NoCollectionViewController)!
       
-//        yesVC.view.isHidden = false
-//        targetVC.view.isHidden = false
-//        maybeVC.view.isHidden = false
-//        noVC.view.isHidden = false
+        self.addChildViewControllerCustom(childViewController: yesVC)
+        self.addChildViewControllerCustom(childViewController: targetVC)
+        self.addChildViewControllerCustom(childViewController: maybeVC)
+        self.addChildViewControllerCustom(childViewController: noVC)
         
-            var stackView: UIStackView!
-            stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.axis = .vertical
-            stackView.spacing = 0
-            stackView.distribution = .fillEqually
+        var stackView: UIStackView!
+        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        stackView.distribution = .fillEqually
         
         
         var scrollView: UIScrollView!
@@ -77,63 +40,25 @@ class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1.2),
-            // childVC.topAnchor.constraint(equalTo: scrollView.to2pAnchor),
-            //  childVC.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-            // childVC.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
             ])
-        
         view.addSubview(scrollView)
-    }
-    private func intitialiseRibbons(){
-        var yesVC: YesCollectionViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            var viewController = storyboard.instantiateViewController(withIdentifier: "greenScreen") as! YesCollectionViewController
-            
-            self.addChildViewControllerCustom(childViewController: viewController)
-            return viewController
-        }()
         
-        var targetVC: TargetCollectionViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            var viewController = storyboard.instantiateViewController(withIdentifier: "tryingScreen") as! TargetCollectionViewController
-            
-            self.addChildViewControllerCustom(childViewController: viewController)
-            return viewController
-        }()
-        
-        var maybeVC: MaybeCollectionViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            var viewController = storyboard.instantiateViewController(withIdentifier: "amberScreen") as! MaybeCollectionViewController
-            
-            self.addChildViewControllerCustom(childViewController: viewController)
-            return viewController
-        }()
-        
-        var noVC: NoCollectionViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            var viewController = storyboard.instantiateViewController(withIdentifier: "redScreen") as! NoCollectionViewController
-            
-            self.addChildViewControllerCustom(childViewController: viewController)
-            return viewController
-        }()
-        
-       var stackView: UIStackView = {
-            let sv = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
-            sv.translatesAutoresizingMaskIntoConstraints = false
-            sv.axis = .vertical
-            sv.spacing = 0
-            sv.distribution = .fillEqually
-            return sv
-        }()
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(sender: )) )
+        self.view.addGestureRecognizer(pinch)
     }
 
-    private func addChildViewControllerCustom(childViewController: UICollectionViewController)
-    {
+    private func addChildViewControllerCustom(childViewController: UICollectionViewController){
         addChild(childViewController)
         view.addSubview(childViewController.view)
         childViewController.view.frame = view.bounds
-     //   childViewController.view.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
-        //childViewController.view.heightAnchor.constraint(equalToConstant: 100)
         childViewController.didMove(toParent: self)
+    }
+
+    @objc func handlePinchGesture(sender: UIPinchGestureRecognizer) -> Void {
+        print("That pinches!")
+        if sender.state == .ended
+        {
+            performSegue(withIdentifier: "goToCamera", sender: self)
+        }
     }
 }

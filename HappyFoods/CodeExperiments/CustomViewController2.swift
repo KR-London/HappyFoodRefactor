@@ -13,6 +13,48 @@ class CustomViewController2: UIViewController {
 //    let viewYes = UIView()
 //    let viewMaybe = UIView()
 //    let viewNo = UIView()
+    
+    //
+    //    lazy var yesVC: YesCollectionViewController = {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    //        var viewController = storyboard.instantiateViewController(withIdentifier: "greenScreen") as! YesCollectionViewController
+    //
+    //        self.addChildViewControllerCustom(childViewController: viewController)
+    //        return viewController
+    //    }()
+    
+    //    lazy var targetVC: TargetCollectionViewController = {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    //        var viewController = storyboard.instantiateViewController(withIdentifier: "tryingScreen") as! TargetCollectionViewController
+    //
+    //        self.addChildViewControllerCustom(childViewController: viewController)
+    //        return viewController
+    //    }()
+    //
+    //    lazy var maybeVC: MaybeCollectionViewController = {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    //        var viewController = storyboard.instantiateViewController(withIdentifier: "amberScreen") as! MaybeCollectionViewController
+    //
+    //        self.addChildViewControllerCustom(childViewController: viewController)
+    //        return viewController
+    //    }()
+    //
+    //    lazy var noVC: NoCollectionViewController = {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    //        var viewController = storyboard.instantiateViewController(withIdentifier: "redScreen") as! NoCollectionViewController
+    //
+    //        self.addChildViewControllerCustom(childViewController: viewController)
+    //        return viewController
+    //    }()
+    
+    //    lazy var stackView: UIStackView = {
+    //            let sv = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
+    //            sv.translatesAutoresizingMaskIntoConstraints = false
+    //            sv.axis = .vertical
+    //            sv.spacing = 0
+    //            sv.distribution = .fillEqually
+    //            return sv
+    //        }()
 //    
 //    
 //    lazy var stackView: UIStackView = {
@@ -23,6 +65,8 @@ class CustomViewController2: UIViewController {
 //        sv.distribution = .fillEqually
 //        return sv
 //    }()
+    
+    
 
 
     override func viewDidLoad() {
@@ -39,13 +83,13 @@ class CustomViewController2: UIViewController {
        // let childVC = YesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
 //        let childVC = OnboardingViewController2()
-//        
+//
 //        self.addChild(childVC)
-//        
+//
 //        //self.addChild(YesCollectionViewController)
 //        // Register child VC
 //        childVC.didMove(toParent: self)
-//        
+//
 //        NSLayoutConstraint.activate([
 //            childVC.view.widthAnchor.constraint(equalToConstant: 100),
 //             childVC.view.heightAnchor.constraint(equalToConstant: 100),
