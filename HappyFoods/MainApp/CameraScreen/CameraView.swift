@@ -36,7 +36,9 @@ class CameraView: UIView {
         NSLayoutConstraint.activate(
             [
                 backgroundView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                backgroundView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+                backgroundView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                backgroundView.topAnchor.constraint(equalTo: self.topAnchor),
+                backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
             ]
         )
     }

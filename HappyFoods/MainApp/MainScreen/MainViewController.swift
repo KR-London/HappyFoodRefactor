@@ -15,16 +15,19 @@ class MainViewController: UIViewController {
 
         let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
         let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
-        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
+        let maybeVC1 = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
+        let maybeVC2 = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
         let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? NoCollectionViewController)!
       
         self.addChildViewControllerCustom(childViewController: yesVC)
         self.addChildViewControllerCustom(childViewController: targetVC)
-        self.addChildViewControllerCustom(childViewController: maybeVC)
+        self.addChildViewControllerCustom(childViewController: maybeVC1)
+      //  self.addChildViewControllerCustom(childViewController: maybeVC2)
+
         self.addChildViewControllerCustom(childViewController: noVC)
         
         var stackView: UIStackView!
-        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
+        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC1.view, noVC.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 0
