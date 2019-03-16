@@ -10,6 +10,28 @@ import UIKit
 import CoreData
 
 class CameraViewController: UIViewController {
+    
+    
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraRoll: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var deleteFoodImageButton: UIButton!
+    
+    
+    @IBAction func takePhoto(_ sender: Any) {
+    }
+    
+    @IBAction func pickFromCameraRoll(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

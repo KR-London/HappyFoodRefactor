@@ -230,12 +230,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-Z9-2rt">
                                 <rect key="frame" x="75" y="65" width="225" height="470"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E31-W9-Cw0">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="CameraButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E31-W9-Cw0">
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="225"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="E31-W9-Cw0" secondAttribute="height" multiplier="1:1" id="m8R-Pe-5jf"/>
                                         </constraints>
                                         <state key="normal" image="Camera-2.png"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="z5Q-Dd-hOy" eventType="touchUpInside" id="T2r-9v-Bo6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxZ-NV-v4I">
                                         <rect key="frame" x="0.0" y="245" width="225" height="225"/>
@@ -243,6 +246,9 @@
                                             <constraint firstAttribute="width" secondItem="YxZ-NV-v4I" secondAttribute="height" multiplier="1:1" id="jdk-Gg-JBZ"/>
                                         </constraints>
                                         <state key="normal" image="roll.png"/>
+                                        <connections>
+                                            <action selector="pickFromCameraRoll:" destination="z5Q-Dd-hOy" eventType="touchUpInside" id="quy-4A-gKy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
@@ -254,19 +260,38 @@
                                     <constraint firstAttribute="width" constant="200" id="N8S-YJ-3Qh"/>
                                     <constraint firstAttribute="width" secondItem="df0-oN-kIv" secondAttribute="height" multiplier="29:22" id="bK3-4c-GTa"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="back.png"/>
+                                <state key="normal" image="back.png"/>
                                 <connections>
                                     <segue destination="1Wv-wj-gyF" kind="show" id="2Wh-h3-nEm"/>
                                 </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VwS-Wm-7Dv">
+                                <rect key="frame" x="56.5" y="202.5" width="262.5" height="262.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VwS-Wm-7Dv" secondAttribute="height" multiplier="1:1" id="oMY-Az-ZY4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-VR-c3h">
+                                <rect key="frame" x="17" y="162" width="113.5" height="116.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w6b-VR-c3h" secondAttribute="height" multiplier="101:104" id="co2-XM-hkg"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cross.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="df0-oN-kIv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="G0D-Z9-2rt" secondAttribute="bottom" id="2Gs-bQ-xra"/>
+                            <constraint firstItem="VwS-Wm-7Dv" firstAttribute="width" secondItem="p5i-eY-xGN" secondAttribute="width" multiplier="0.7" id="FoB-lZ-b9y"/>
                             <constraint firstItem="df0-oN-kIv" firstAttribute="leading" secondItem="GLZ-ie-aKQ" secondAttribute="leading" id="HU6-oz-r7J"/>
+                            <constraint firstItem="w6b-VR-c3h" firstAttribute="top" secondItem="VwS-Wm-7Dv" secondAttribute="top" multiplier="0.8" identifier="Cross just above image " id="LAg-Cy-J3o"/>
+                            <constraint firstItem="w6b-VR-c3h" firstAttribute="leading" secondItem="VwS-Wm-7Dv" secondAttribute="leading" multiplier="0.3" identifier="Cross just left of image " id="NKb-as-tSO"/>
                             <constraint firstItem="df0-oN-kIv" firstAttribute="bottom" secondItem="GLZ-ie-aKQ" secondAttribute="bottom" priority="927" constant="-40" id="NjS-Sh-Q22">
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="VwS-Wm-7Dv" firstAttribute="centerY" secondItem="p5i-eY-xGN" secondAttribute="centerY" id="Pmg-CV-I2u"/>
+                            <constraint firstItem="w6b-VR-c3h" firstAttribute="width" secondItem="G0D-Z9-2rt" secondAttribute="width" multiplier="0.5" constant="1" id="h83-Ps-nmo"/>
+                            <constraint firstItem="VwS-Wm-7Dv" firstAttribute="centerX" secondItem="p5i-eY-xGN" secondAttribute="centerX" id="iX6-XB-PFJ"/>
                             <constraint firstItem="G0D-Z9-2rt" firstAttribute="centerY" secondItem="p5i-eY-xGN" secondAttribute="centerY" multiplier="0.9" id="kZo-S8-MdB"/>
                             <constraint firstItem="G0D-Z9-2rt" firstAttribute="centerX" secondItem="p5i-eY-xGN" secondAttribute="centerX" id="vLZ-BI-gHs"/>
                             <constraint firstItem="G0D-Z9-2rt" firstAttribute="width" secondItem="p5i-eY-xGN" secondAttribute="width" multiplier="0.6" id="yBA-pm-AxW"/>
@@ -277,6 +302,13 @@
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="backButton" destination="df0-oN-kIv" id="pUd-cd-b54"/>
+                        <outlet property="cameraButton" destination="E31-W9-Cw0" id="RqF-oj-FOd"/>
+                        <outlet property="cameraRoll" destination="YxZ-NV-v4I" id="cEN-ef-xgq"/>
+                        <outlet property="deleteFoodImageButton" destination="w6b-VR-c3h" id="8a0-WJ-3Eo"/>
+                        <outlet property="foodImage" destination="VwS-Wm-7Dv" id="Kwt-0F-GQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5M-9c-Un3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,6 +336,7 @@
         <image name="Good.png" width="2100" height="658"/>
         <image name="Maybe.png" width="2100" height="1316"/>
         <image name="back.png" width="203" height="203"/>
+        <image name="cross.png" width="167" height="168"/>
         <image name="roll.png" width="203" height="203"/>
         <image name="trying.png" width="2100" height="658"/>
     </resources>
