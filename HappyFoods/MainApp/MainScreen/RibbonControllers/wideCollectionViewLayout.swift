@@ -30,8 +30,27 @@ class wideCollectionViewLayout: UICollectionViewLayout {
     // this value if an update was performed.
     var dataSourceDidUpdate = true
     
-    func collectionViewContentSize() -> CGSize{
-        return self.contentSize
+//    func lastLayoutAttributes() -> UICollectionViewLayoutAttributes? {
+//        return cellAttrsDictionary.values.map { $0 }.sorted(by: { $0.frame.maxX < $1.frame.maxX }).last
+//    }
+//
+//    override var collectionViewContentSize: CGSize {
+//        guard let collectionView = collectionView else { return .zero }
+//        guard collectionView.frame != .zero else { return .zero }
+//
+//        let width: CGFloat
+//        let height: CGFloat = collectionView.frame.width
+//
+//        if let lastLayoutAttributes = lastLayoutAttributes() {
+//            width = lastLayoutAttributes.frame.maxX
+//        } else {
+//            width = 0
+//        }
+//
+//        return CGSize(width: width, height: 2*CONTENT_HEIGHT/5)
+//    }
+    override var collectionViewContentSize: CGSize{
+        return CGSize(width: CGFloat(CELL_HEIGHT) , height: 2*CONTENT_HEIGHT/5)
     }
     
     override func prepare() {

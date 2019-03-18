@@ -44,12 +44,13 @@ class MaybeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return foodArray.count
+        return foodArray.count/2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
-    
+
+        /// edit this to allow for double depth rows
         let cellContentsIndex = indexPath.row
         if cellContentsIndex <= foodArray.count
         {

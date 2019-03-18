@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/narrowCollectionViewLayout.swift"
-            timestampString = "574605545.291159"
+            timestampString = "574620704.996924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "prepare()"
             landmarkType = "7">
          </BreakpointContent>
@@ -287,6 +287,132 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+            timestampString = "574620704.997016"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "prepare()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
+            timestampString = "574620704.997556"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+            timestampString = "574620704.997635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "wideCollectionViewLayout"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyFoods.wideCollectionViewLayout.cellAttrsDictionary.getter : Swift.Dictionary&lt;__C.NSIndexPath, __C.UICollectionViewLayoutAttributes&gt;"
+                  moduleName = "HappyFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Documents/HappyFoods/HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+                  timestampString = "574619835.099512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyFoods.wideCollectionViewLayout.cellAttrsDictionary.setter : Swift.Dictionary&lt;__C.NSIndexPath, __C.UICollectionViewLayoutAttributes&gt;"
+                  moduleName = "HappyFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Documents/HappyFoods/HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+                  timestampString = "574619835.102046"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyFoods.wideCollectionViewLayout.init() -&gt; HappyFoods.wideCollectionViewLayout"
+                  moduleName = "HappyFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Documents/HappyFoods/HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+                  timestampString = "574619835.104739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyFoods.wideCollectionViewLayout.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HappyFoods.wideCollectionViewLayout&gt;"
+                  moduleName = "HappyFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Documents/HappyFoods/HappyFoods/MainApp/MainScreen/RibbonControllers/wideCollectionViewLayout.swift"
+                  timestampString = "574619835.107119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
+            timestampString = "574620704.998026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>

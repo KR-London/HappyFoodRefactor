@@ -31,12 +31,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-rB-VxU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-rB-VxU">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zQM-rB-VxU" secondAttribute="trailing" id="Qcy-JV-PsB"/>
+                                    <constraint firstItem="zQM-rB-VxU" firstAttribute="top" secondItem="xS9-8Q-yhe" secondAttribute="top" id="TyM-QS-uSq"/>
+                                    <constraint firstItem="zQM-rB-VxU" firstAttribute="leading" secondItem="xS9-8Q-yhe" secondAttribute="leading" id="Wu3-bE-JIn"/>
+                                    <constraint firstAttribute="bottom" secondItem="zQM-rB-VxU" secondAttribute="bottom" id="vUS-mS-VHX"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="zQM-rB-VxU" id="NFQ-zt-cZ3"/>
                                 </connections>
@@ -73,12 +78,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SjU-y8-ddd">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="63"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SjU-y8-ddd">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SjU-y8-ddd" secondAttribute="bottom" id="991-tB-JwW"/>
+                                    <constraint firstAttribute="trailing" secondItem="SjU-y8-ddd" secondAttribute="trailing" id="G2l-jA-58o"/>
+                                    <constraint firstItem="SjU-y8-ddd" firstAttribute="top" secondItem="51V-nA-yeR" secondAttribute="top" id="JC7-GJ-eCG"/>
+                                    <constraint firstItem="SjU-y8-ddd" firstAttribute="leading" secondItem="51V-nA-yeR" secondAttribute="leading" id="acI-Gs-Fw5"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="SjU-y8-ddd" id="cHy-VC-ACn"/>
                                 </connections>
@@ -136,12 +146,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-f6-q5U">
-                                            <rect key="frame" x="-67" y="-39" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-f6-q5U">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tCE-f6-q5U" secondAttribute="bottom" id="M4y-B5-Br3"/>
+                                    <constraint firstItem="tCE-f6-q5U" firstAttribute="leading" secondItem="Ext-lA-cAD" secondAttribute="leading" id="ay2-j1-Wt3"/>
+                                    <constraint firstAttribute="trailing" secondItem="tCE-f6-q5U" secondAttribute="trailing" id="b9F-8e-Dgf"/>
+                                    <constraint firstItem="tCE-f6-q5U" firstAttribute="top" secondItem="Ext-lA-cAD" secondAttribute="top" id="isE-Ps-Wa9"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="tCE-f6-q5U" id="bAj-hB-OcI"/>
                                 </connections>
@@ -181,12 +196,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-fM-7EA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-fM-7EA">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XAu-fM-7EA" secondAttribute="trailing" id="34X-ph-RFV"/>
+                                    <constraint firstItem="XAu-fM-7EA" firstAttribute="leading" secondItem="atm-ys-hEX" secondAttribute="leading" id="7NZ-2e-FOs"/>
+                                    <constraint firstAttribute="bottom" secondItem="XAu-fM-7EA" secondAttribute="bottom" id="grg-3v-uqX"/>
+                                    <constraint firstItem="XAu-fM-7EA" firstAttribute="top" secondItem="atm-ys-hEX" secondAttribute="top" id="yUH-2u-wrL"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="XAu-fM-7EA" id="fBz-Zc-hoN"/>
                                 </connections>
