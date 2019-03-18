@@ -27,17 +27,17 @@ class CustomCollectionViewCell: UICollectionViewCell {
     {
         //        if foodImage.image != nil
         //        {
-        foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
+    foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
         //}
-        //foodImage.image = UIImage(named: image)
+      // foodImage.image = UIImage(named: image)
         //  foodName.text = title
         // print("No ribbon should display \(title)")
     }
     
     func setup(){
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.cornerRadius = 5.0
+//        self.layer.borderWidth = 1.0
+//        self.layer.borderColor = UIColor.red.cgColor
+//        self.layer.cornerRadius = 5.0
     }
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{

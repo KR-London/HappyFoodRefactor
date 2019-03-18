@@ -13,6 +13,7 @@ private let reuseIdentifier = "noCell"
 
 class NoCollectionViewController: UICollectionViewController {
 
+    @IBOutlet var noCollectionView: UICollectionView!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!

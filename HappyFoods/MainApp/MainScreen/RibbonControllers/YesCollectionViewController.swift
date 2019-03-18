@@ -21,6 +21,10 @@ class YesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  let layout = narrowCollectionLayout()
+        self.collectionViewLayout.invalidateLayout()
+ 
    
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 1 }
@@ -32,7 +36,7 @@ class YesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return foodArray.count 
+        return foodArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,6 +48,8 @@ class YesCollectionViewController: UICollectionViewController {
             let plate = foodArray[cellContentsIndex]
             cell.displayContent(image: plate.image_file_name ?? "chaos.jpg")
         }
+        
+        //cell.imageView.frame = cell.bounds
     
         return cell
     }

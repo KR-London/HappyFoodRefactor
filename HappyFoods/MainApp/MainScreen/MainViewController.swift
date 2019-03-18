@@ -15,34 +15,44 @@ class MainViewController: UIViewController {
 
         let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
         let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
-        let maybeVC1 = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
-        let maybeVC2 = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
+        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
         let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? NoCollectionViewController)!
       
         self.addChildViewControllerCustom(childViewController: yesVC)
         self.addChildViewControllerCustom(childViewController: targetVC)
-        self.addChildViewControllerCustom(childViewController: maybeVC1)
-      //  self.addChildViewControllerCustom(childViewController: maybeVC2)
-
+        self.addChildViewControllerCustom(childViewController: maybeVC)
         self.addChildViewControllerCustom(childViewController: noVC)
         
         var stackView: UIStackView!
-        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC1.view, noVC.view])
+        
+//        yesVC.view.invalidateIntrinsicContentSize()
+//        targetVC.view.invalidateIntrinsicContentSize()
+//        maybeVC1.view.invalidateIntrinsicContentSize()
+//        noVC.view.invalidateIntrinsicContentSize()
+        
+        yesVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5 ).isActive = true
+        targetVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
+        maybeVC.view.heightAnchor.constraint(equalToConstant: 2*CONTENT_HEIGHT/5).isActive = true
+        noVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
+        
+     
+        
+        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 0
-        stackView.distribution = .fillEqually
+
         
         
         var scrollView: UIScrollView!
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1.2*UIScreen.main.bounds.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CONTENT_HEIGHT)
         scrollView.addSubview(stackView)
     
         scrollView.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1.2),
+            stackView.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT),
             ])
         view.addSubview(scrollView)
         

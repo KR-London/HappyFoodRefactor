@@ -15,7 +15,7 @@ class OnboardingViewController3: UIViewController {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "MainScreen") as! CustomViewController
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "MainScreen") as! MainViewController
             self.present(newViewController, animated: true, completion: nil)
         }
     }

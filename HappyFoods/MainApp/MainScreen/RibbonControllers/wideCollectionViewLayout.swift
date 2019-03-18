@@ -13,9 +13,7 @@ class wideCollectionViewLayout: UICollectionViewLayout {
     
     /// used for calculating each cells' CGRect on screen.
     /// CGRect will define the origin and size of the cell
-    let CELL_HEIGHT = 100.0
-    let CELL_WIDTH = 100.0
-    let CELL_SPACING = 25.0
+
     
     // dictionary yo hold the UICollectionViewLayoutAttributes for each cell
     // layout attributes will define teh cell's size and position (x,y,z index).

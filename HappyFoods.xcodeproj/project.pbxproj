@@ -77,6 +77,8 @@
 		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
 		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
 		44A27FBE2238239600244A96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBD2238239600244A96 /* MainView.swift */; };
+		44A5DF81223FA194008EF562 /* Extensions_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5DF80223FA194008EF562 /* Extensions_UIView.swift */; };
+		44A5DF83223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */; };
 		44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6332231341200A96B28 /* OnboardingView2.swift */; };
 		44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6362231349200A96B28 /* OnboardingView3.swift */; };
 		44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D639223134CB00A96B28 /* SwipeScreenView.swift */; };
@@ -173,6 +175,8 @@
 		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
 		44A27FBD2238239600244A96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44A5DF80223FA194008EF562 /* Extensions_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_UIView.swift; sourceTree = "<group>"; };
+		44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProportionConstantsAreHere.swift; sourceTree = "<group>"; };
 		44B3D6332231341200A96B28 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		44B3D6362231349200A96B28 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
 		44B3D639223134CB00A96B28 /* SwipeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenView.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 		44803C8621F1DB660053AECB = {
 			isa = PBXGroup;
 			children = (
+				44A5DF80223FA194008EF562 /* Extensions_UIView.swift */,
 				44803C9121F1DB660053AECB /* HappyFoods */,
 				447ACD7F22342BE2001748D3 /* FoodPhotos */,
 				4403E629220ADD76000B5BAE /* Backgrounds */,
@@ -424,6 +429,7 @@
 		44CC662E223948B800540374 /* RibbonControllers */ = {
 			isa = PBXGroup;
 			children = (
+				44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */,
 				447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */,
 				447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */,
 				447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */,
@@ -588,6 +594,7 @@
 				44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */,
 				447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */,
 				44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */,
+				44A5DF81223FA194008EF562 /* Extensions_UIView.swift in Sources */,
 				44803CB821F1E3800053AECB /* AppStoryboards.swift in Sources */,
 				447ACD5022341BB5001748D3 /* parseCSV.swift in Sources */,
 				44803CC221F1E8F80053AECB /* OnboardingViewController3.swift in Sources */,
@@ -607,6 +614,7 @@
 				44CC66302239497600540374 /* narrowCollectionViewLayout.swift in Sources */,
 				4497E28C2209D07000254128 /* CameraViewController.swift in Sources */,
 				4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */,
+				44A5DF83223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift in Sources */,
 				4403E65D220AEDE9000B5BAE /* Extensions_UIImage.swift in Sources */,
 				44CC662D22391DEF00540374 /* MainViewController.swift in Sources */,
 				44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */,
