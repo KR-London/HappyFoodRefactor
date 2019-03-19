@@ -52,6 +52,9 @@
                             <outlet property="delegate" destination="lkN-xG-NO6" id="q0V-m1-Mck"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="maybeCollectionView" destination="M7G-uT-eOH" id="Fdq-qG-B6Z"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkK-MV-9tq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

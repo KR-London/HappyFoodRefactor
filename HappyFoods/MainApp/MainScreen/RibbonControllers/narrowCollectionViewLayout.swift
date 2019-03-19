@@ -24,6 +24,8 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
     var dataSourceDidUpdate = true
     
     func lastLayoutAttributes() -> UICollectionViewLayoutAttributes? {
+        
+        /// this gives you the biggest value of X so we know how big to set the content size. 
         return cellAttrsDictionary.values.map { $0 }.sorted(by: { $0.frame.maxX < $1.frame.maxX }).last
     }
     
@@ -50,7 +52,7 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
             for item in 0...(collectionView?.numberOfItems(inSection: 0))!-1{
                 /// build the collection attributes
                 let cellIndex = NSIndexPath(item: item, section: 0)
-                let xPos = Double(item)*CELL_WIDTH + CELL_SPACING
+                let xPos = Double(item)*(CELL_WIDTH  + CELL_SPACING) + CELL_SPACING
                 let yPos = CELL_SPACING
                 
                 let cellAttributes = UICollectionViewLayoutAttributes(forCellWith: cellIndex as IndexPath)

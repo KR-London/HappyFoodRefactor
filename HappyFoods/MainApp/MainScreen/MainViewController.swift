@@ -12,10 +12,10 @@ import CoreData
 class MainViewController: UIViewController {
     
         //// this is what I use to co-ordinate my VCs
-//        weak var communicationChannelGreen: CommunicationChannel?
-//        weak var communicationChannelTarget: CommunicationChannel?
-//        weak var communicationChannelAmber: CommunicationChannel?
-//        weak var communicationChannelRed: CommunicationChannel?
+        weak var communicationChannelGreen: CommunicationChannel?
+        weak var communicationChannelTarget: CommunicationChannel?
+        weak var communicationChannelAmber: CommunicationChannel?
+        weak var communicationChannelRed: CommunicationChannel?
     
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var food: [NSManagedObject] = []
@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
+     self.view.subviews[0].dele
         
         
         let scrollingStackOfCollectionViews = setUpCollectionViewScrollingStack()
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         var stackView: UIStackView!
         var scrollView: UIScrollView!
         
-     //   communicationChannelGreen = yesVC
+       // communicationChannelGreen = yesVC
        
         self.addChildViewControllerCustom(childViewController: yesVC)
         self.addChildViewControllerCustom(childViewController: targetVC)

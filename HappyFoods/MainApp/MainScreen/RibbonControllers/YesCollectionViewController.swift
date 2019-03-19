@@ -97,7 +97,7 @@ class YesCollectionViewController: UICollectionViewController{
     
 }
 
-extension YesCollectionViewController: UICollectionViewDragDelegate{
+extension YesCollectionViewController : UICollectionViewDragDelegate{
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let item = self.foodArray[indexPath.row].image_file_name
         let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)

@@ -50,7 +50,7 @@ class wideCollectionViewLayout: UICollectionViewLayout {
 //        return CGSize(width: width, height: 2*CONTENT_HEIGHT/5)
 //    }
     override var collectionViewContentSize: CGSize{
-        return CGSize(width: CGFloat(CELL_HEIGHT) , height: 2*CONTENT_HEIGHT/5)
+        return CGSize(width: CGFloat(1000) , height: 2*CONTENT_HEIGHT/5)
     }
     
     override func prepare() {
@@ -79,21 +79,17 @@ class wideCollectionViewLayout: UICollectionViewLayout {
         for item in 0...numberOfItemsToDisplay-1
         {
             var cellIndex = NSIndexPath()
-            var yPos = CELL_HEIGHT
+            var yPos = CELL_SPACING
             /// build the UICollectionViewAttributes for the cell
-            if item % 2 == 0
-            {
-                cellIndex = NSIndexPath(item:item,section:1)
+            if item % 2 == 0{
+                cellIndex = NSIndexPath(item:item/2,section:0)
             }
-            else
-            {
-                cellIndex = NSIndexPath(item:item,section:2)
-                yPos = 2*CELL_HEIGHT
+            else {
+                cellIndex = NSIndexPath(item:(item-1)/2,section:1)
+                yPos = yPos + CELL_HEIGHT + CELL_SPACING
             }
             
-            
-            
-            let xPos = Double(item)*(CELL_WIDTH + CELL_SPACING) + CELL_SPACING
+            let xPos = Double(item/2)*(CELL_WIDTH + CELL_SPACING) + CELL_SPACING
             
             
             let  cellAttributes = UICollectionViewLayoutAttributes(forCellWith: cellIndex as IndexPath)
@@ -106,7 +102,7 @@ class wideCollectionViewLayout: UICollectionViewLayout {
         }
         
         //update content size
-        self.contentSize = CGSize(width:140, height:140)
+        self.contentSize = CGSize(width:1700, height:700)
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -129,11 +125,11 @@ class wideCollectionViewLayout: UICollectionViewLayout {
         return cellAttrsDictionary[indexPath as NSIndexPath]!
     }
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return true
-    }
+//    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+//        return true
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 1
+//    }
 }

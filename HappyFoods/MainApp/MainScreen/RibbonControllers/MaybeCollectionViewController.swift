@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
 
 private let reuseIdentifier = "maybeCell"
 
@@ -15,7 +16,9 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         print("Maybe")
     }
+ 
     
+    @IBOutlet var maybeCollectionView: UICollectionView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -26,6 +29,9 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 2}
         
+        maybeCollectionView.dragDelegate = self
+        maybeCollectionView.dropDelegate = self
+        maybeCollectionView.dragInteractionEnabled = true
     }
 
     /*
@@ -66,37 +72,6 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
     func loadItems(){
         
         let request : NSFetchRequest<Food> = Food.fetchRequest()
@@ -111,3 +86,84 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         
     }
 }
+
+extension MaybeCollectionViewController : UICollectionViewDragDelegate{
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item = self.foodArray[indexPath.row].image_file_name
+        let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
+        
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        
+        return [dragItem]
+    }
+}
+
+extension MaybeCollectionViewController: UICollectionViewDropDelegate{
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        let destinationIndexPath: IndexPath
+        if let indexPath = coordinator.destinationIndexPath{
+            /// if I reciognise the index path the user is aiming for - stick it there
+            destinationIndexPath = indexPath
+        }
+        else{
+            /// if I'm lost - stick in on the end
+            if collectionView.numberOfItems(inSection: 0) > collectionView.numberOfItems(inSection: 1)
+            {
+                destinationIndexPath = IndexPath(row: collectionView.numberOfItems(inSection: 1), section: 1)
+            }
+            else
+            {
+                destinationIndexPath = IndexPath(row: collectionView.numberOfItems(inSection: 0), section: 0)
+            }
+        }
+        
+        for item in coordinator.items{
+            if let snack = item.dragItem.localObject as? String{
+                if snack == "" {return}
+                
+                /// placeholder to add call to delegate to let them know what's going on
+                
+                /// insert data into food array if its come from elsewhere
+                var draggedFood: Food
+                let request : NSFetchRequest<Food> = Food.fetchRequest()
+                do{
+                    let foodArrayFull = try context.fetch(request)
+                    draggedFood = foodArrayFull.filter{$0.image_file_name == snack}.filter{$0.image_file_name != "tick.png"}.first!
+                    draggedFood.rating = 1
+                    foodArray.insert(draggedFood, at: destinationIndexPath.row)
+                }
+                catch{
+                    print("Error fetching data \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.maybeCollectionView.insertItems(at: [destinationIndexPath])
+                }
+                
+                /// right now it's not deleting the dragged item - but i think that's handled by the delegate so I will leave it. Database seems to be correct.
+                
+            }
+        }
+    }
+    
+    func  collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        
+        //// three scenarios to deal with: drop object comiong from this VC, drop object coming from other VC, or its all gone a bit mad and you are trying to drag more than one object at once
+        if collectionView.hasActiveDrag{
+            if session.items.count > 1 {
+                return UICollectionViewDropProposal(operation: .cancel)
+            }
+            else{
+                return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+            }
+        }
+        else{
+            return UICollectionViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
+        }
+        
+    }
+    
+    
+}
+
