@@ -31,6 +31,7 @@
 		4403E657220ADD7F000B5BAE /* MASK_dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403E652220ADD7F000B5BAE /* MASK_dp.png */; };
 		4403E658220ADD7F000B5BAE /* MASK.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403E653220ADD7F000B5BAE /* MASK.png */; };
 		4403E65D220AEDE9000B5BAE /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4403E65C220AEDE9000B5BAE /* Extensions_UIImage.swift */; };
+		44365CA92240F92F006E4372 /* CommunicationChannelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */; };
 		447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */; };
 		447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */; };
 		447ACD4A22340BEC001748D3 /* MaybeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */; };
@@ -125,6 +126,7 @@
 		4403E652220ADD7F000B5BAE /* MASK_dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK_dp.png; sourceTree = "<group>"; };
 		4403E653220ADD7F000B5BAE /* MASK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK.png; sourceTree = "<group>"; };
 		4403E65C220AEDE9000B5BAE /* Extensions_UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
+		44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationChannelProtocol.swift; sourceTree = "<group>"; };
 		447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewController.swift; sourceTree = "<group>"; };
 		447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewController.swift; sourceTree = "<group>"; };
 		447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				44CC662C22391DEF00540374 /* MainViewController.swift */,
 				44A27FBD2238239600244A96 /* MainView.swift */,
+				44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */,
 				44CC662E223948B800540374 /* RibbonControllers */,
 			);
 			path = MainScreen;
@@ -619,6 +622,7 @@
 				44CC662D22391DEF00540374 /* MainViewController.swift in Sources */,
 				44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */,
 				44B3D63D2232B8CA00A96B28 /* CameraView.swift in Sources */,
+				44365CA92240F92F006E4372 /* CommunicationChannelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

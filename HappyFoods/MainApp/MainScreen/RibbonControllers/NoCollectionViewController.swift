@@ -11,7 +11,11 @@ import CoreData
 
 private let reuseIdentifier = "noCell"
 
-class NoCollectionViewController: UICollectionViewController {
+class NoCollectionViewController: UICollectionViewController, CommunicationChannel {
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        print("no")
+    }
+    
 
     @IBOutlet var noCollectionView: UICollectionView!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

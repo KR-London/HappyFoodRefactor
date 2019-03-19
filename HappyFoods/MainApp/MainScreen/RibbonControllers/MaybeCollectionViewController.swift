@@ -11,7 +11,11 @@ import CoreData
 
 private let reuseIdentifier = "maybeCell"
 
-class MaybeCollectionViewController: UICollectionViewController {
+class MaybeCollectionViewController: UICollectionViewController, CommunicationChannel {
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        print("Maybe")
+    }
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []

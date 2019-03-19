@@ -20,3 +20,11 @@ class CustomView: UIView {
     }
     
 }
+
+
+//    private func addChildViewControllerCustom(childViewController: UICollectionViewController){
+//        addChild(childViewController)
+//        view.addSubview(childViewController.view)
+//        childViewController.view.frame = view.bounds
+//        childViewController.didMove(toParent: self)
+//    }
