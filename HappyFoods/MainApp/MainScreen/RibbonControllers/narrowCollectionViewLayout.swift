@@ -57,7 +57,6 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
                 
                 let cellAttributes = UICollectionViewLayoutAttributes(forCellWith: cellIndex as IndexPath)
                 cellAttributes.frame = CGRect(x: xPos, y:yPos, width: CELL_WIDTH, height: CELL_HEIGHT)
-               // cellAttributes.frame = CGRect(x: xPos, y:yPos, width: CELL_WIDTH + 2*CELL_SPACING, height: CELL_HEIGHT)
                 cellAttributes.zIndex = 1
                 
                 //save

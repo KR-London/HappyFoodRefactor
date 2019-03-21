@@ -13,10 +13,15 @@ import MobileCoreServices
 private let reuseIdentifier = "maybeCell"
 
 class MaybeCollectionViewController: UICollectionViewController, CommunicationChannel {
+    func sayHello() {
+          print("Maybe")
+    }
+    
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         print("Maybe")
     }
  
+     weak var delegate: CommunicationChannel?
     
     @IBOutlet var maybeCollectionView: UICollectionView!
     
@@ -28,6 +33,8 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         super.viewDidLoad()
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 2}
+        self.collectionViewLayout.invalidateLayout()
+        //var foodsTriedThisWeek: [(String, IndexPath)]!
         
         maybeCollectionView.dragDelegate = self
         maybeCollectionView.dropDelegate = self
@@ -61,7 +68,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
 
         /// edit this to allow for double depth rows
-        let cellContentsIndex = indexPath.row
+        let cellContentsIndex = 2*indexPath.row + indexPath.section
         if cellContentsIndex <= foodArray.count
         {
             let plate = foodArray[cellContentsIndex]
@@ -91,20 +98,26 @@ extension MaybeCollectionViewController : UICollectionViewDragDelegate{
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let item = self.foodArray[indexPath.row].image_file_name
         let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
-        
+        self.collectionView.collectionViewLayout.invalidateLayout()
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        
+        foodsTriedThisWeek = [(foodArray[indexPath.row].name, indexPath, "fromMaybeRibbon")]
+            ///put this back in a minute
+           /// + foodsTriedThisWeek
+        print("I just tried \(foodsTriedThisWeek)")
+
         return [dragItem]
     }
 }
 
 extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        let destinationIndexPath: IndexPath
+        
+        var destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath{
             /// if I reciognise the index path the user is aiming for - stick it there
-            destinationIndexPath = indexPath
+           // destinationIndexPath = indexPath
+            destinationIndexPath = IndexPath(row:0, section: 1)
         }
         else{
             /// if I'm lost - stick in on the end
@@ -123,6 +136,7 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
                 if snack == "" {return}
                 
                 /// placeholder to add call to delegate to let them know what's going on
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoAmber")
                 
                 /// insert data into food array if its come from elsewhere
                 var draggedFood: Food

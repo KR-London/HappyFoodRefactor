@@ -15,18 +15,17 @@ private let reuseIdentifier = "yesCell"
 @IBDesignable
 class YesCollectionViewController: UICollectionViewController{
     
-    fileprivate var longPressGesture: UILongPressGestureRecognizer!
-    
+    weak var delegate: CommunicationChannel?
 
     @IBOutlet var yesCollectionView: UICollectionView!
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      //  let layout = narrowCollectionLayout()
+
         self.collectionViewLayout.invalidateLayout()
  
    
@@ -36,12 +35,12 @@ class YesCollectionViewController: UICollectionViewController{
         yesCollectionView.dragDelegate = self
         yesCollectionView.dropDelegate = self
         yesCollectionView.dragInteractionEnabled = true
+        
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return foodArray.count
@@ -74,6 +73,7 @@ class YesCollectionViewController: UICollectionViewController{
         }
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreen")] + ( foodsTriedThisWeek ?? [])
         dragItem.localObject = sampledFood
         return [dragItem]
     }
@@ -104,6 +104,8 @@ extension YesCollectionViewController : UICollectionViewDragDelegate{
 
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
+        
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreenRibbon")] + ( foodsTriedThisWeek ?? [])
 
         return [dragItem]
     }
@@ -126,6 +128,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 if snack == "" {return}
                 
                 /// placeholder to add call to delegate to let them know what's going on
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoGreen")
                 
                 /// insert data into food array if its come from elsewhere
                 var draggedFood: Food

@@ -10,11 +10,12 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class TargetCollectionViewController: UICollectionViewController, CommunicationChannel {
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        print("target")
-    }
+class TargetCollectionViewController: UICollectionViewController{
+//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+//        print("target")
+//    }
     
+     weak var delegate: CommunicationChannel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

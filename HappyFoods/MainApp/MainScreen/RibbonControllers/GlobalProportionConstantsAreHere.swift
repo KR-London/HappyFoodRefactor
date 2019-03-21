@@ -17,3 +17,7 @@ let CONTENT_HEIGHT = 1.1*UIScreen.main.bounds.height
 let CELL_HEIGHT = Double(0.7*CONTENT_HEIGHT/5)
 let CELL_WIDTH = Double(CELL_HEIGHT)
 let CELL_SPACING = Double(0.15*CONTENT_HEIGHT/5)
+
+var celebrationTiggered = false
+
+
