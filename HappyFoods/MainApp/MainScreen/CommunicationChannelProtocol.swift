@@ -180,7 +180,7 @@ extension TargetCollectionViewController: CommunicationChannel{
 //    
 //}
 
-extension NoCollectionViewController: CommunicationChannel{
+extension CustomCollectionViewController: CommunicationChannel{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
        // print("No")
@@ -198,3 +198,22 @@ extension NoCollectionViewController: CommunicationChannel{
     }
     
 }
+
+//extension NoCollectionViewController: CommunicationChannel{
+//    
+//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+//        // print("No")
+//        
+//        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+//        foodArray = foodArray.filter{ $0.rating == 1 }
+//        //self.reloadInputViews()
+//        self.collectionView!.reloadData()
+//        self.collectionViewLayout.invalidateLayout()
+//        self.collectionView!.numberOfItems(inSection: 0)
+//    }
+//    
+//    func sayHello(){
+//        print("No")
+//    }
+//    
+//}

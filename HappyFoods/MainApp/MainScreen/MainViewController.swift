@@ -16,8 +16,7 @@ class MainViewController: UIViewController {
         weak var communicationChannelTarget: CommunicationChannel?
         weak var communicationChannelAmber: CommunicationChannel?
         weak var communicationChannelRed: CommunicationChannel?
-    
-    
+        weak var communicationChannelTemp: CommunicationChannel?
     
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var food: [NSManagedObject] = []
@@ -61,7 +60,9 @@ class MainViewController: UIViewController {
         let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
         let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
         let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
-        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? NoCollectionViewController)!
+        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? CustomCollectionViewController)!
+        
+           let tempVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempScreen") as? CustomCollectionViewController)!
         var stackView: UIStackView!
         var scrollView: UIScrollView!
         
@@ -74,20 +75,24 @@ class MainViewController: UIViewController {
         communicationChannelTarget = targetVC
         communicationChannelAmber = maybeVC
         communicationChannelRed = noVC
+          communicationChannelTemp = tempVC
         
        
         self.addChildViewControllerCustom(childViewController: yesVC)
         self.addChildViewControllerCustom(childViewController: targetVC)
         self.addChildViewControllerCustom(childViewController: maybeVC)
         self.addChildViewControllerCustom(childViewController: noVC)
+         self.addChildViewControllerCustom(childViewController: tempVC)
         
         yesVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5 ).isActive = true
         targetVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
         maybeVC.view.heightAnchor.constraint(equalToConstant: 2*CONTENT_HEIGHT/5).isActive = true
         noVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
+       tempVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
         
         
-        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
+        stackView = UIStackView(arrangedSubviews: [yesVC.view, noVC.view, tempVC.view, maybeVC.view])
+        //stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 0
