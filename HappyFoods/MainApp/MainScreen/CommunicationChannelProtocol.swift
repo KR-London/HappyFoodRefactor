@@ -141,11 +141,9 @@ extension MainViewController: CommunicationChannel{
 extension YesCollectionViewController: CommunicationChannel{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-       // print("Yes")
-        
+ 
         foodArray.remove(at: foodsTriedThisWeek[0].1.row)
         foodArray = foodArray.filter{ $0.rating == 1 }
-        //self.reloadInputViews()
         self.collectionView!.reloadData()
         self.collectionView!.numberOfItems(inSection: 0)
     }
@@ -155,6 +153,45 @@ extension YesCollectionViewController: CommunicationChannel{
     }
     
 }
+
+
+extension NoCollectionViewController: CommunicationChannel{
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+ 
+        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+        foodArray = foodArray.filter{ $0.rating == 3 }
+        //self.reloadInputViews()
+        self.collectionView!.reloadData()
+        //self.collectionViewLayout.invalidateLayout()
+        self.collectionView!.numberOfItems(inSection: 0)
+    }
+    
+    func sayHello(){
+        print("No")
+    }
+    
+}
+
+extension CustomCollectionViewController: CommunicationChannel{
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        // print("No")
+        
+        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+        foodArray = foodArray.filter{ $0.rating == 1 }
+
+        self.collectionView!.reloadData()
+        self.collectionViewLayout.invalidateLayout()
+        self.collectionView!.numberOfItems(inSection: 0)
+    }
+    
+    func sayHello(){
+        print("No")
+    }
+    
+}
+
 
 extension TargetCollectionViewController: CommunicationChannel{
     
@@ -169,51 +206,14 @@ extension TargetCollectionViewController: CommunicationChannel{
 }
 
 //extension MaybeCollectionViewController: CommunicationChannel{
-//    
+//
 //    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
 //        print("Maybe")
 //    }
-//    
+//
 //    func sayHello(){
 //        print("Maybe")
 //    }
-//    
+//
 //}
 
-extension CustomCollectionViewController: CommunicationChannel{
-    
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-       // print("No")
-        
-        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-        foodArray = foodArray.filter{ $0.rating == 1 }
-        //self.reloadInputViews()
-        self.collectionView!.reloadData()
-        self.collectionViewLayout.invalidateLayout()
-        self.collectionView!.numberOfItems(inSection: 0)
-    }
-    
-    func sayHello(){
-        print("No")
-    }
-    
-}
-
-//extension NoCollectionViewController: CommunicationChannel{
-//    
-//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-//        // print("No")
-//        
-//        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-//        foodArray = foodArray.filter{ $0.rating == 1 }
-//        //self.reloadInputViews()
-//        self.collectionView!.reloadData()
-//        self.collectionViewLayout.invalidateLayout()
-//        self.collectionView!.numberOfItems(inSection: 0)
-//    }
-//    
-//    func sayHello(){
-//        print("No")
-//    }
-//    
-//}

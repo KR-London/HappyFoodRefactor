@@ -8,8 +8,8 @@
 
 import UIKit
 
-class narrowCollectionViewLayout: UICollectionViewLayout {
-
+class noCollectionViewLayout: UICollectionViewLayout {
+    
     // dictionary yo hold the UICollectionViewLayoutAttributes for each cell
     // layout attributes will define the cell's size and position (x,y,z index).
     /// one of the heaview parts of the layout.recommend holding it in a dictionary or data store for smooth performance
@@ -25,7 +25,7 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
     
     func lastLayoutAttributes() -> UICollectionViewLayoutAttributes? {
         
-        /// this gives you the biggest value of X so we know how big to set the content size. 
+        /// this gives you the biggest value of X so we know how big to set the content size.
         return cellAttrsDictionary.values.map { $0 }.sorted(by: { $0.frame.maxX < $1.frame.maxX }).last
     }
     
@@ -35,7 +35,7 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
         
         let width: CGFloat
         let height: CGFloat = CONTENT_HEIGHT/5
-            //collectionView.frame.width
+        //collectionView.frame.width
         
         if let lastLayoutAttributes = lastLayoutAttributes() {
             width = lastLayoutAttributes.frame.maxX
@@ -75,7 +75,7 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
             if rect.intersects(cellAttributes.frame)
             {
                 attributesInRTect.append(cellAttributes)
-                 print("narrow \(cellAttributes.indexPath)")
+                print("no \(cellAttributes.indexPath)")
             }
         }
         
@@ -90,8 +90,8 @@ class narrowCollectionViewLayout: UICollectionViewLayout {
         return true
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 1
-//    }
-
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 1
+    //    }
+    
 }

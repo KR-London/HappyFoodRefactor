@@ -75,6 +75,7 @@
 		449724D7223986B30027A97C /* wideCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449724D6223986B30027A97C /* wideCollectionViewLayout.swift */; };
 		4497E28C2209D07000254128 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28B2209D07000254128 /* CameraViewController.swift */; };
 		4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28E2209DB8C00254128 /* OnboardingView1.swift */; };
+		449CC8632244F27400F44546 /* noCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CC8622244F27400F44546 /* noCollectionViewLayout.swift */; };
 		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
 		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
 		44A27FBE2238239600244A96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBD2238239600244A96 /* MainView.swift */; };
@@ -176,6 +177,7 @@
 		449724D6223986B30027A97C /* wideCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wideCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4497E28B2209D07000254128 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4497E28E2209DB8C00254128 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
+		449CC8622244F27400F44546 /* noCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
 		44A27FBD2238239600244A96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */,
 				449724D6223986B30027A97C /* wideCollectionViewLayout.swift */,
 				44CC662F2239497600540374 /* narrowCollectionViewLayout.swift */,
+				449CC8622244F27400F44546 /* noCollectionViewLayout.swift */,
 			);
 			path = RibbonControllers;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44BCE7962242C53A00EF5C38 /* AppUtility.swift in Sources */,
+				449CC8632244F27400F44546 /* noCollectionViewLayout.swift in Sources */,
 				44F085462244047900505AE8 /* CustomCollectionViewController.swift in Sources */,
 				447ACD4C22340BFF001748D3 /* NoCollectionViewController.swift in Sources */,
 				44A27FBE2238239600244A96 /* MainView.swift in Sources */,

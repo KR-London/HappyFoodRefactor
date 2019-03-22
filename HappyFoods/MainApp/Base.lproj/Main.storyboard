@@ -124,15 +124,15 @@
             </objects>
             <point key="canvasLocation" x="-1044" y="-1248"/>
         </scene>
-        <!--Custom Collection View Controller-->
+        <!--No Collection View Controller-->
         <scene sceneID="laT-9p-qGT">
             <objects>
-                <collectionViewController storyboardIdentifier="tempScreen" id="qna-mc-mf5" customClass="CustomCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="tempScreen" id="qna-mc-mf5" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="WPR-yU-TV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewLayout key="collectionViewLayout" id="Wda-Cg-K9r" customClass="narrowCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="e2O-Je-odf" customClass="noCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bad.png" id="L5V-oI-ieD">
                             <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,7 +167,7 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="myCollectionView" destination="WPR-yU-TV9" id="eJ3-6E-WqX"/>
+                        <outlet property="noCollectionView" destination="WPR-yU-TV9" id="VzD-BL-tNj"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PlG-w9-Fm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
