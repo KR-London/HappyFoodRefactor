@@ -31,6 +31,8 @@
 		4403E657220ADD7F000B5BAE /* MASK_dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403E652220ADD7F000B5BAE /* MASK_dp.png */; };
 		4403E658220ADD7F000B5BAE /* MASK.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403E653220ADD7F000B5BAE /* MASK.png */; };
 		4403E65D220AEDE9000B5BAE /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4403E65C220AEDE9000B5BAE /* Extensions_UIImage.swift */; };
+		4409EBF32249680A00E6983A /* RibbonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409EBF22249680A00E6983A /* RibbonEnum.swift */; };
+		4409EBF522496E6C00E6983A /* TriedFoodObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409EBF422496E6C00E6983A /* TriedFoodObject.swift */; };
 		44365CA92240F92F006E4372 /* CommunicationChannelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */; };
 		447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */; };
 		447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */; };
@@ -72,11 +74,8 @@
 		44803CC021F1E8DE0053AECB /* OnboardingViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44803CBF21F1E8DE0053AECB /* OnboardingViewController2.swift */; };
 		44803CC221F1E8F80053AECB /* OnboardingViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44803CC121F1E8F80053AECB /* OnboardingViewController3.swift */; };
 		44803CC521F1E99E0053AECB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44803CC421F1E99E0053AECB /* CustomViewController.swift */; };
-		449724D7223986B30027A97C /* wideCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449724D6223986B30027A97C /* wideCollectionViewLayout.swift */; };
 		4497E28C2209D07000254128 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28B2209D07000254128 /* CameraViewController.swift */; };
 		4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28E2209DB8C00254128 /* OnboardingView1.swift */; };
-		449CC8632244F27400F44546 /* noCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CC8622244F27400F44546 /* noCollectionViewLayout.swift */; };
-		449CC86522450C7700F44546 /* narrowMaybeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449CC86422450C7700F44546 /* narrowMaybeCollectionViewLayout.swift */; };
 		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
 		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
 		44A27FBE2238239600244A96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBD2238239600244A96 /* MainView.swift */; };
@@ -91,7 +90,6 @@
 		44BCE7962242C53A00EF5C38 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCE7952242C53A00EF5C38 /* AppUtility.swift */; };
 		44C78C6D222D34610048495D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C78C6C222D34610048495D /* Launch Screen.storyboard */; };
 		44CC662D22391DEF00540374 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CC662C22391DEF00540374 /* MainViewController.swift */; };
-		44CC66302239497600540374 /* narrowCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CC662F2239497600540374 /* narrowCollectionViewLayout.swift */; };
 		44F085462244047900505AE8 /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F085452244047900505AE8 /* CustomCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +128,8 @@
 		4403E652220ADD7F000B5BAE /* MASK_dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK_dp.png; sourceTree = "<group>"; };
 		4403E653220ADD7F000B5BAE /* MASK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK.png; sourceTree = "<group>"; };
 		4403E65C220AEDE9000B5BAE /* Extensions_UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
+		4409EBF22249680A00E6983A /* RibbonEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RibbonEnum.swift; sourceTree = "<group>"; };
+		4409EBF422496E6C00E6983A /* TriedFoodObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriedFoodObject.swift; sourceTree = "<group>"; };
 		44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationChannelProtocol.swift; sourceTree = "<group>"; };
 		447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewController.swift; sourceTree = "<group>"; };
 		447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewController.swift; sourceTree = "<group>"; };
@@ -175,11 +175,8 @@
 		44803CBF21F1E8DE0053AECB /* OnboardingViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController2.swift; sourceTree = "<group>"; };
 		44803CC121F1E8F80053AECB /* OnboardingViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController3.swift; sourceTree = "<group>"; };
 		44803CC421F1E99E0053AECB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		449724D6223986B30027A97C /* wideCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wideCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4497E28B2209D07000254128 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4497E28E2209DB8C00254128 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
-		449CC8622244F27400F44546 /* noCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noCollectionViewLayout.swift; sourceTree = "<group>"; };
-		449CC86422450C7700F44546 /* narrowMaybeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = narrowMaybeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
 		44A27FBD2238239600244A96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -194,7 +191,6 @@
 		44BCE7952242C53A00EF5C38 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 		44C78C6C222D34610048495D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		44CC662C22391DEF00540374 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		44CC662F2239497600540374 /* narrowCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = narrowCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44F085452244047900505AE8 /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -381,17 +377,6 @@
 			path = ReadySteadySwipe;
 			sourceTree = "<group>";
 		};
-		449CC86622450F9900F44546 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				449CC8622244F27400F44546 /* noCollectionViewLayout.swift */,
-				449724D6223986B30027A97C /* wideCollectionViewLayout.swift */,
-				44CC662F2239497600540374 /* narrowCollectionViewLayout.swift */,
-				449CC86422450C7700F44546 /* narrowMaybeCollectionViewLayout.swift */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
 		44A27FBF223823AA00244A96 /* CodeExperiments */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +429,7 @@
 				44CC662C22391DEF00540374 /* MainViewController.swift */,
 				44A27FBD2238239600244A96 /* MainView.swift */,
 				44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */,
+				4409EBF422496E6C00E6983A /* TriedFoodObject.swift */,
 				44CC662E223948B800540374 /* RibbonControllers */,
 			);
 			path = MainScreen;
@@ -453,13 +439,13 @@
 			isa = PBXGroup;
 			children = (
 				44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */,
+				4409EBF22249680A00E6983A /* RibbonEnum.swift */,
 				447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */,
 				44F085452244047900505AE8 /* CustomCollectionViewController.swift */,
 				447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */,
 				447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */,
 				447ACD4B22340BFF001748D3 /* NoCollectionViewController.swift */,
 				44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */,
-				449CC86622450F9900F44546 /* Layout */,
 			);
 			path = RibbonControllers;
 			sourceTree = "<group>";
@@ -612,13 +598,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4409EBF522496E6C00E6983A /* TriedFoodObject.swift in Sources */,
 				44BCE7962242C53A00EF5C38 /* AppUtility.swift in Sources */,
-				449CC8632244F27400F44546 /* noCollectionViewLayout.swift in Sources */,
 				44F085462244047900505AE8 /* CustomCollectionViewController.swift in Sources */,
 				447ACD4C22340BFF001748D3 /* NoCollectionViewController.swift in Sources */,
 				44A27FBE2238239600244A96 /* MainView.swift in Sources */,
 				44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */,
-				449CC86522450C7700F44546 /* narrowMaybeCollectionViewLayout.swift in Sources */,
 				447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */,
 				44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */,
 				44A5DF81223FA194008EF562 /* Extensions_UIView.swift in Sources */,
@@ -628,7 +613,6 @@
 				44803CBC21F1E8AC0053AECB /* OnboardingViewController1.swift in Sources */,
 				447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */,
 				44803C9B21F1DB660053AECB /* HappyFoods.xcdatamodeld in Sources */,
-				449724D7223986B30027A97C /* wideCollectionViewLayout.swift in Sources */,
 				44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */,
 				447ACD4A22340BEC001748D3 /* MaybeCollectionViewController.swift in Sources */,
 				44803C9321F1DB660053AECB /* AppDelegate.swift in Sources */,
@@ -638,12 +622,12 @@
 				44803CBE21F1E8CC0053AECB /* SwipeRateViewController.swift in Sources */,
 				44803CC521F1E99E0053AECB /* CustomViewController.swift in Sources */,
 				44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */,
-				44CC66302239497600540374 /* narrowCollectionViewLayout.swift in Sources */,
 				4497E28C2209D07000254128 /* CameraViewController.swift in Sources */,
 				4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */,
 				44A5DF83223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift in Sources */,
 				4403E65D220AEDE9000B5BAE /* Extensions_UIImage.swift in Sources */,
 				44CC662D22391DEF00540374 /* MainViewController.swift in Sources */,
+				4409EBF32249680A00E6983A /* RibbonEnum.swift in Sources */,
 				44B3D63A223134CB00A96B28 /* SwipeScreenView.swift in Sources */,
 				44B3D63D2232B8CA00A96B28 /* CameraView.swift in Sources */,
 				44365CA92240F92F006E4372 /* CommunicationChannelProtocol.swift in Sources */,

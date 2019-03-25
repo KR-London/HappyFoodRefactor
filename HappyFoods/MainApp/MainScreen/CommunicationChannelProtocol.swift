@@ -1,235 +1,237 @@
-//
-//  CommunicationChannelProtocol.swift
-//  HappyFoods
-//
-//  Created by Kate Roberts on 19/03/2019.
-//  Copyright © 2019 Kate Roberts. All rights reserved.
-//
-
 import Foundation
+import CoreData
+
 
 //A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements
-//var foodsTriedThisWeek = [(String?, IndexPath, String)]()
 
 protocol CommunicationChannel : class {
-    func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
-    func sayHello()
+    // func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
+    // func sayHello()
+    
+    // var draggedFood: Pokemon { get set }
+    // here i decide if I add to foods tried this week
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon)
+    
+    // the drop delegate will handle most of this?
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath)
+    
+    // this is the hard working one
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon)
 }
 
-var foodsTriedThisWeek: [(String?, IndexPath, String)]!
-
-extension MainViewController: CommunicationChannel{
+extension MainViewController:CommunicationChannel{
     
-//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-//        print("Main")
-//    }
-//
-    func sayHello(){
-        print("Yes")
-    }
-    
-    func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
-    {
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+        /// sanity check that we agree what's in transit!
+        if triedFood.draggedFoodFileName != imageFileName
+        {
+            return
+        }
         
-        let sourceSink = (from: foodsTriedThisWeek[0].2, to: sourceViewController)
+        let sourceSink = (triedFood.sourceViewController, destinationViewController)
         
         switch sourceSink
         {
-        case ("fromGreenRibbon", "droppingIntoGreen"):
-            communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-        case ("fromGreenRibbon", "droppingIntoTarget"):
-            communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-        case ("fromGreenRibbon", "droppingIntoMaybe"):
-            communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-        case ("fromGreenRibbon", "droppingIntoRed"):
-            communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            communicationChannelGreen?.sayHello()
-            communicationChannelRed?.sayHello()
+      
+            case ( .yes, .maybe) :
+            
+                communicationChannelAmber?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+                communicationChannelGreen?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .yes)
+            
             break
             
-        case ( "fromTargetRibbon", "droppingIntoTarget"):
-            communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
-            break
-        case ("fromTargetRibbon", "droppingIntoGreen"):
-            communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
-            break
-        case ("fromTargetRibbon", "droppingIntoMaybe"):
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-        case ("fromTargetRibbon", "droppingIntoRed"):
-            //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            case (.yes, .no):
+                communicationChannelRed?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+                communicationChannelGreen?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .yes)
             break
             
-
-        case ("fromMaybeRibbon", "droppingIntoGreen"): communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-        //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-        doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
-            break
-        case ("fromMaybeRibbon", "droppingIntoTarget"):
-            communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            case ( .maybe, .yes) :
+            
+                communicationChannelGreen?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+                communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
+            
             break
             
-        case ("fromMaybeRibbon", "droppingIntoMaybe"):
-            communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-     
-        case ("fromMaybeRibbon", "droppingIntoRed"):
-            communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            case (.maybe, .no):
+                communicationChannelRed?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+                communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
             break
             
+            case ( .no, .yes) :
             
-        case ("fromRedRibbon", "droppingIntoRed"):
-            communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            //doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
-            // communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            communicationChannelGreen?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+            communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
+            
             break
-        case ("fromRedRibbon", "droppingIntoGreen"):
-            communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
-            // communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            
+            case ( .no, .maybe) :
+            
+                communicationChannelAmber?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+            
+                communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
+            
             break
-        case ("fromRedRibbon", "droppingIntoTarget"):
-            communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-        case ("fromRedRibbon", "droppingIntoMaybe"):
-            //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            //foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-            break
-    
             
         default: return
         }
         
         
-        if foodsTriedThisWeek != nil && celebrationTiggered == false
-        {
-            if foodsTriedThisWeek.count >= 6
-            {
-                performSegue(withIdentifier: "celebrationScreen", sender: self)
-                celebrationTiggered = true
-            }
-        }
-        
-        //        if sourceSink.from == "fromTopMaybeRibbon"
-        //        {
-        //            communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-        //        }
-        //        if sourceSink.from == "fromBottomMaybeRibbon"
-        //        {
-        //            communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-        //        }
-        
-        
-        //     communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+        return
     }
     
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+        /// this one does nothing
+        return
+    }
     
-    
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+        /// this one has to update the tried food object to keep track of what I'm dragging and where it came from
+        triedFood.draggedFoodFileName = imageFileName
+        triedFood.sourceIndexPath = sourceIndexPath
+        triedFood.sourceViewController = sourceRibbon
+        print( triedFood.draggedFoodFileName.description)
+        return
+    }
 }
 
 extension YesCollectionViewController: CommunicationChannel{
-    
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
- 
-        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-        foodArray = foodArray.filter{ $0.rating == 1 }
-        self.collectionView!.reloadData()
-        self.collectionView!.numberOfItems(inSection: 0)
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+        /// does nothing
+        return
     }
     
-    func sayHello(){
-         self.collectionViewLayout.invalidateLayout()
-        self.reloadInputViews()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-         print("Yes")
-    }
-    
-}
-
-
-extension NoCollectionViewController: CommunicationChannel{
-    
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
- 
-        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-        foodArray = foodArray.filter{ $0.rating == 3 }
-        //self.reloadInputViews()
-        self.collectionView!.reloadData()
-        //self.collectionViewLayout.invalidateLayout()
-        self.collectionView!.numberOfItems(inSection: 0)
-    }
-    
-    func sayHello(){
-        self.collectionViewLayout.invalidateLayout()
-        self.reloadInputViews()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        print("No")
-    }
-    
-}
-
-extension CustomCollectionViewController: CommunicationChannel{
-    
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        // print("No")
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+        /// I will put the drop delegate code in here.
+        /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        let request : NSFetchRequest<Food> = Food.fetchRequest()
+        do{
+            let foodArrayFull = try context.fetch(request)
+            let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
+            draggedFood.rating = 0
+            foodArray.insert(draggedFood, at: destinationIndexPath.row)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
         
-        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-        foodArray = foodArray.filter{ $0.rating == 1 }
-
-        self.collectionView!.reloadData()
-        self.collectionViewLayout.invalidateLayout()
-        self.collectionView!.numberOfItems(inSection: 0)
+        try!context.save()
+        self.yesCollectionView.insertItems(at: [destinationIndexPath])
+        return
     }
     
-    func sayHello(){
-        self.collectionViewLayout.invalidateLayout()
-        print("No")
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+        /// this deletes the item from the ribbon.
+        self.yesCollectionView.performBatchUpdates({
+            foodArray.remove(at: sourceIndexPath.row)
+            self.yesCollectionView.deleteItems(at: [sourceIndexPath])
+            // self.boxCollectionView.collectionViewLayout.invalidateLayout()
+            // self.boxCollectionView.collectionViewLayout.prepare()
+            
+        })
+        
+        return
     }
+    
     
 }
-
 
 extension TargetCollectionViewController: CommunicationChannel{
-    
-    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        print("Target ")
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+        return
     }
     
-    func sayHello(){
-        print("Target")
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+        return
     }
+    
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+        return
+    }
+    
     
 }
-
 
 extension MaybeCollectionViewController: CommunicationChannel{
-func sayHello() {
-    self.collectionViewLayout.invalidateLayout()
-    print("Maybe")
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+        /// does nothing
+        return
+    }
+    
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+        /// I will put the drop delegate code in here.
+        /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        // I need to pull the record out of the database
+        let request : NSFetchRequest<Food> = Food.fetchRequest()
+        do{
+            let foodArrayFull = try context.fetch(request)
+            let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
+            draggedFood.rating = 1
+            foodArray.insert(draggedFood, at: destinationIndexPath.row)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+        
+        try!context.save()
+        self.maybeCollectionView.insertItems(at: [destinationIndexPath])
+        return
+    }
+    
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+        /// this deletes the item from the ribbon.
+        /// where do I update food Array...?
+        self.maybeCollectionView.performBatchUpdates({
+            foodArray.remove(at: sourceIndexPath.row)
+            self.maybeCollectionView.deleteItems(at: [sourceIndexPath])
+            // self.teamCollectionView.collectionViewLayout.invalidateLayout()
+        })
+        
+        return
+    }
 }
 
-func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-    foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-    foodArray = foodArray.filter{ $0.rating == 2 }
-    self.collectionView!.reloadData()
-    self.collectionView!.numberOfItems(inSection: 0)
+extension NoCollectionViewController: CommunicationChannel{
+    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+        /// does nothing
+        return
+    }
+    
+    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+        /// I will put the drop delegate code in here.
+        /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        // I need to pull the record out of the database
+        let request : NSFetchRequest<Food> = Food.fetchRequest()
+        do{
+            let foodArrayFull = try context.fetch(request)
+            let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
+            draggedFood.rating = 1
+            foodArray.insert(draggedFood, at: destinationIndexPath.row)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+        
+        try!context.save()
+        self.noCollectionView.insertItems(at: [destinationIndexPath])
+        return
+    }
+    
+    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+        /// this deletes the item from the ribbon.
+        /// where do I update food Array...?
+        self.noCollectionView.performBatchUpdates({
+            foodArray.remove(at: sourceIndexPath.row)
+            self.noCollectionView.deleteItems(at: [sourceIndexPath])
+            // self.teamCollectionView.collectionViewLayout.invalidateLayout()
+        })
+        
+        return
+    }
 }
-}
+
+

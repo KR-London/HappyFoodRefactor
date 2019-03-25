@@ -74,7 +74,7 @@ class CustomCollectionViewController: UICollectionViewController{
         }
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreen")] + ( foodsTriedThisWeek ?? [])
+       // foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreen")] + ( foodsTriedThisWeek ?? [])
         dragItem.localObject = sampledFood
         return [dragItem]
     }
@@ -106,7 +106,7 @@ extension CustomCollectionViewController : UICollectionViewDragDelegate{
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreenRibbon")] + ( foodsTriedThisWeek ?? [])
+       // foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreenRibbon")] + ( foodsTriedThisWeek ?? [])
         
         return [dragItem]
     }
@@ -128,9 +128,7 @@ extension CustomCollectionViewController: UICollectionViewDropDelegate{
             if let snack = item.dragItem.localObject as? String{
                 if snack == "" {return}
                 
-                /// placeholder to add call to delegate to let them know what's going on
-                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoGreen")
-                
+            
                 /// insert data into food array if its come from elsewhere
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()

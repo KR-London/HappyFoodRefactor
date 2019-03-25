@@ -86,7 +86,7 @@ class NoCollectionViewController: UICollectionViewController{
         }
 
         let dragItem = UIDragItem(itemProvider: itemProvider)
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromRed")] + ( foodsTriedThisWeek ?? [])
+      //  foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromRed")] + ( foodsTriedThisWeek ?? [])
         dragItem.localObject =  sampledFood
         return [dragItem]
     }
@@ -109,6 +109,16 @@ class NoCollectionViewController: UICollectionViewController{
 
 }
 
+extension NoCollectionViewController : UICollectionViewDelegateFlowLayout{
+    //MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: CELL_HEIGHT, height: CELL_HEIGHT)
+    }
+}
+
+
 extension NoCollectionViewController : UICollectionViewDragDelegate{
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let item = self.foodArray[indexPath.row].image_file_name
@@ -116,8 +126,9 @@ extension NoCollectionViewController : UICollectionViewDragDelegate{
 
         let dragItem = UIDragItem(itemProvider: itemProvider)
 
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromRedRibbon")] + ( foodsTriedThisWeek ?? [])
         dragItem.localObject = item
+        
+       delegate?.removeFromSourceRibbon(imageFileName: item ?? "", sourceIndexPath: indexPath, sourceRibbon: .no)
 
         return [dragItem]
     }
@@ -142,27 +153,34 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
             if let snack = item.dragItem.localObject as? String{
                 if snack == "" {return}
 
-                /// placeholder to add call to delegate to let them know what's going on
-                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoRed")
-
-                /// insert data into food array if its come from elsewhere
-                var draggedFood: Food
-                let request : NSFetchRequest<Food> = Food.fetchRequest()
-                do{
-                    let foodArrayFull = try context.fetch(request)
-                    draggedFood = foodArrayFull.filter{$0.image_file_name == snack}.filter{$0.image_file_name != "tick.png"}.first!
-                    draggedFood.rating = 3
-                    foodArray.insert(draggedFood, at: destinationIndexPath.row)
+                switch coordinator.proposal.operation
+                {
+                case .move:
+                    
+                    /// i would need to add more here to make the re-ordering persist
+                    let sourceIndexPath = coordinator.items.first!.sourceIndexPath
+                    let draggedFood = foodArray![(sourceIndexPath?.row)!]
+                    
+                    //self.boxCollectionView.moveItem(at: sourceIndexPath!, to: destinationIndexPath)
+                    noCollectionView.performBatchUpdates({
+                        /// swap the datasource
+                        foodArray.remove(at: (sourceIndexPath?.row)!)
+                        foodArray.insert(draggedFood, at: destinationIndexPath.row)
+                        //swap the view
+                        self.noCollectionView.deleteItems(at: [sourceIndexPath!])
+                        self.noCollectionView.insertItems(at: [destinationIndexPath])
+                    })
+                    
+                    // try!context.save()
+                    
+                    break
+                    
+                case .copy:
+                    delegate?.triage(imageFileName: snack, destinationIndexPath: destinationIndexPath, destinationViewController: .no)
+                    
+                    break
+                default: return
                 }
-                catch{
-                    print("Error fetching data \(error)")
-                }
-
-                DispatchQueue.main.async {
-                    self.noCollectionView.insertItems(at: [destinationIndexPath])
-                }
-
-                /// right now it's not deleting the dragged item - but i think that's handled by the delegate so I will leave it. Database seems to be correct.
 
             }
         }

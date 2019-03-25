@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
+    
+        let triedFood = TriedFoodsObject()
 
         //// this is what I use to co-ordinate my VCs
         weak var communicationChannelGreen: CommunicationChannel?
@@ -30,8 +32,6 @@ class MainViewController: UIViewController {
 
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(sender: )) )
         self.view.addGestureRecognizer(pinch)
-        
-        communicationChannelGreen?.sayHello()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
       noVC.delegate = self
         
         communicationChannelGreen = yesVC
-        communicationChannelTarget = targetVC
+        communicationChannelTarget = targetVC as! CommunicationChannel
         communicationChannelAmber = maybeVC
         communicationChannelRed = noVC
         
@@ -207,44 +207,44 @@ class MainViewController: UIViewController {
     
     func doesThisGetATick(sourceIndexPath: IndexPath, from: String, to: String)
     {
-        var unique = [Int]()
-        /// check for uniqueness
-        for i in 0 ... foodsTriedThisWeek.count-1
-        {
-            if i > 0
-            {
-                if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
-                {
-                    // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                    // return
-                    unique = [i] + unique            }
-            }
-        }
-        
-        if unique.count > 0
-        {
-            for i in 0 ... unique.count - 1
-            {
-                foodsTriedThisWeek.remove(at: unique[i])
-            }
-            
-            /// this is the bug. A failed drop gives an extra 'food tried this week' - but can end up with no tick allocated at this stage.
-//            if visibleTicks == foodsTriedThisWeek.count
+//        var unique = [Int]()
+//        /// check for uniqueness
+//        for i in 0 ... foodsTriedThisWeek.count-1
+//        {
+//            if i > 0
 //            {
-//                return
+//                if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
+//                {
+//                    // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+//                    // return
+//                    unique = [i] + unique            }
 //            }
-        }
-        
-        /// if it is unique, then give the use a smiley!
-        communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: to)
-        
-        /// and save down to coreData
-        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-            
-            newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
-            newFood.dateTried = nil
-        }
+//        }
+//        
+//        if unique.count > 0
+//        {
+//            for i in 0 ... unique.count - 1
+//            {
+//                foodsTriedThisWeek.remove(at: unique[i])
+//            }
+//            
+//            /// this is the bug. A failed drop gives an extra 'food tried this week' - but can end up with no tick allocated at this stage.
+////            if visibleTicks == foodsTriedThisWeek.count
+////            {
+////                return
+////            }
+//        }
+//        
+//        /// if it is unique, then give the use a smiley!
+//        communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: to)
+//        
+//        /// and save down to coreData
+//        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//            let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+//            
+//            newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
+//            newFood.dateTried = nil
+//        }
     }
 
 }
