@@ -25,27 +25,21 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-   
-        
-        
-        let scrollingStackOfCollectionViews = setUpCollectionViewScrollingStack()
+        let scrollingStackOfCollectionViews = setUpCollectionViewScrollingStack_noWideLayout()
         view.addSubview(scrollingStackOfCollectionViews)
 
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(sender: )) )
         self.view.addGestureRecognizer(pinch)
         
         communicationChannelGreen?.sayHello()
-        
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        AppUtility.lockOrientation(.portrait)
+       // AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
     }
     
@@ -98,6 +92,59 @@ class MainViewController: UIViewController {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CONTENT_HEIGHT)
         scrollView.addSubview(stackView)
 
+        scrollView.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT),
+            ])
+        
+        return scrollView
+    }
+    
+    func setUpCollectionViewScrollingStack_noWideLayout( ) -> UIView {
+        
+        let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
+        let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
+        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempMaybe") as? MaybeCollectionViewController)!
+        // let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? CustomCollectionViewController)!
+        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempScreen") as? NoCollectionViewController)!
+        
+        var stackView: UIStackView!
+        var scrollView: UIScrollView!
+        
+        yesVC.delegate = self
+        targetVC.delegate = self
+        maybeVC.delegate = self
+        //  tempVC.delegate = self
+        noVC.delegate = self
+    
+        
+        communicationChannelGreen = yesVC
+        communicationChannelTarget = targetVC
+        communicationChannelAmber = maybeVC
+        communicationChannelRed = noVC
+        
+        
+        self.addChildViewControllerCustom(childViewController: yesVC)
+        self.addChildViewControllerCustom(childViewController: targetVC)
+        self.addChildViewControllerCustom(childViewController: maybeVC)
+        self.addChildViewControllerCustom(childViewController: noVC)
+        
+        yesVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/4 ).isActive = true
+        targetVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/4).isActive = true
+        maybeVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/4).isActive = true
+        noVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/4).isActive = true
+        
+        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        
+        
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CONTENT_HEIGHT*(5/4))
+        scrollView.addSubview(stackView)
+        
         scrollView.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),

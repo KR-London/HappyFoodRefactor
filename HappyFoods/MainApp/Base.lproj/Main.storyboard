@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewLayout key="collectionViewLayout" id="Ga5-cw-2Jb" customClass="wideCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="ksm-Ys-xuG" customClass="narrowMaybeCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Maybe.png" id="2kO-IZ-IW3">
                             <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,16 +47,59 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkK-MV-9tq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4055" y="46"/>
+        </scene>
+        <!--Maybe Collection View Controller-->
+        <scene sceneID="aCZ-7b-46v">
+            <objects>
+                <collectionViewController storyboardIdentifier="tempMaybe" id="UEa-Jn-HOC" customClass="MaybeCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZaR-cQ-VZY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewLayout key="collectionViewLayout" id="1ob-w8-dEG" customClass="narrowMaybeCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
+                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Maybe.png" id="8Nd-Fs-Pb5">
+                            <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="maybeCell" id="qEP-2m-dm9" customClass="CustomCollectionViewCell" customModule="HappyFoods" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WIV-gv-3gi">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="WIV-gv-3gi" firstAttribute="leading" secondItem="qEP-2m-dm9" secondAttribute="leading" id="CQA-AX-uLB"/>
+                                    <constraint firstAttribute="trailing" secondItem="WIV-gv-3gi" secondAttribute="trailing" id="c8X-Tu-g8d"/>
+                                    <constraint firstAttribute="bottom" secondItem="WIV-gv-3gi" secondAttribute="bottom" id="gZW-eA-bbf"/>
+                                    <constraint firstItem="WIV-gv-3gi" firstAttribute="top" secondItem="qEP-2m-dm9" secondAttribute="top" id="pHF-AB-j0e"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="foodImage" destination="WIV-gv-3gi" id="1DO-Px-gUe"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="lkN-xG-NO6" id="uDo-mk-x6J"/>
-                            <outlet property="delegate" destination="lkN-xG-NO6" id="q0V-m1-Mck"/>
+                            <outlet property="dataSource" destination="UEa-Jn-HOC" id="ecw-sh-vxi"/>
+                            <outlet property="delegate" destination="UEa-Jn-HOC" id="K2N-5S-amv"/>
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="maybeCollectionView" destination="M7G-uT-eOH" id="Fdq-qG-B6Z"/>
+                        <outlet property="maybeCollectionView" destination="ZaR-cQ-VZY" id="LVt-a5-MLt"/>
                     </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kkK-MV-9tq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfL-uV-llM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2474" y="-833"/>
         </scene>
@@ -98,9 +141,6 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <connections>
-                        <outlet property="myCollectionView" destination="Tac-VX-D7Q" id="cRp-FX-8gY"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IV-Hb-h8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

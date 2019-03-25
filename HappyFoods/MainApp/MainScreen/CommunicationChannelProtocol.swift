@@ -50,6 +50,8 @@ extension MainViewController: CommunicationChannel{
         case ("fromGreenRibbon", "droppingIntoRed"):
             communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
             foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            communicationChannelGreen?.sayHello()
+            communicationChannelRed?.sayHello()
             break
             
         case ( "fromTargetRibbon", "droppingIntoTarget"):
@@ -74,6 +76,11 @@ extension MainViewController: CommunicationChannel{
         doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
             break
         case ("fromMaybeRibbon", "droppingIntoTarget"):
+            communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            break
+            
+        case ("fromMaybeRibbon", "droppingIntoMaybe"):
             communicationChannelAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
             foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
             break
@@ -104,7 +111,7 @@ extension MainViewController: CommunicationChannel{
         case ("fromRedRibbon", "droppingIntoMaybe"):
             //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
             communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            //foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
             break
     
             
@@ -149,6 +156,9 @@ extension YesCollectionViewController: CommunicationChannel{
     }
     
     func sayHello(){
+         self.collectionViewLayout.invalidateLayout()
+        self.reloadInputViews()
+        self.collectionView.collectionViewLayout.invalidateLayout()
          print("Yes")
     }
     
@@ -168,6 +178,9 @@ extension NoCollectionViewController: CommunicationChannel{
     }
     
     func sayHello(){
+        self.collectionViewLayout.invalidateLayout()
+        self.reloadInputViews()
+        self.collectionView.collectionViewLayout.invalidateLayout()
         print("No")
     }
     
@@ -187,6 +200,7 @@ extension CustomCollectionViewController: CommunicationChannel{
     }
     
     func sayHello(){
+        self.collectionViewLayout.invalidateLayout()
         print("No")
     }
     
@@ -205,15 +219,17 @@ extension TargetCollectionViewController: CommunicationChannel{
     
 }
 
-//extension MaybeCollectionViewController: CommunicationChannel{
-//
-//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-//        print("Maybe")
-//    }
-//
-//    func sayHello(){
-//        print("Maybe")
-//    }
-//
-//}
 
+extension MaybeCollectionViewController: CommunicationChannel{
+func sayHello() {
+    self.collectionViewLayout.invalidateLayout()
+    print("Maybe")
+}
+
+func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+    foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+    foodArray = foodArray.filter{ $0.rating == 2 }
+    self.collectionView!.reloadData()
+    self.collectionView!.numberOfItems(inSection: 0)
+}
+}

@@ -20,4 +20,5 @@ let CELL_SPACING = Double(0.15*CONTENT_HEIGHT/5)
 
 var celebrationTiggered = false
 
+let MAYBE_WIDE = false
 

@@ -43,6 +43,7 @@ class NoCollectionViewController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionViewLayout.invalidateLayout()
+        collectionView.isPrefetchingEnabled = false 
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 3 }
 
