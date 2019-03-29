@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/Onboarding/SwipeScreen/SwipeRateViewController.swift"
-            timestampString = "574100446.281378"
+            timestampString = "575577091.136042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/MainView.swift"
-            timestampString = "574946443.923731"
+            timestampString = "575580104.591198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.359782"
+            timestampString = "575579978.451758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.359929"
+            timestampString = "575490630.38489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -360,7 +360,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.360049"
+            timestampString = "575490630.384982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -376,7 +376,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.360111"
+            timestampString = "575579978.451944"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -392,7 +392,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.360175"
+            timestampString = "575579978.452015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -408,7 +408,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.360229"
+            timestampString = "575579978.452072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -424,7 +424,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.3602771"
+            timestampString = "575579978.4521461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -488,7 +488,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.360414"
+            timestampString = "575490630.38516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -552,7 +552,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.36054"
+            timestampString = "575490630.385268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -568,7 +568,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.360589"
+            timestampString = "575490630.385317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -584,7 +584,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.36064"
+            timestampString = "575490630.3853641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -616,7 +616,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.360715"
+            timestampString = "575490630.385434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -632,11 +632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/MainViewController.swift"
-            timestampString = "575239944.360764"
+            timestampString = "575580104.5918469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -648,7 +648,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/CustomCollectionViewController.swift"
-            timestampString = "575239944.360822"
+            timestampString = "575579664.739123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -696,7 +696,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.3609461"
+            timestampString = "575579978.453058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -712,7 +712,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/MaybeCollectionViewController.swift"
-            timestampString = "575239944.360993"
+            timestampString = "575490630.385617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -728,7 +728,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappyFoods/MainApp/MainScreen/RibbonControllers/YesCollectionViewController.swift"
-            timestampString = "575239944.361039"
+            timestampString = "575579978.453144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -755,6 +755,102 @@
                   offsetFromSymbolStart = "1276">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/MainViewController.swift"
+            timestampString = "575580104.592544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "setUpCollectionViewNoScrollingStack()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/GiveTickChannel.swift"
+            timestampString = "575580104.592926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "giveTick(image_file_name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/GiveTickChannel.swift"
+            timestampString = "575580104.5930049"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "giveTick(image_file_name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/GiveTickChannel.swift"
+            timestampString = "575580104.593071"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "giveTick(image_file_name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/CommunicationChannelProtocol.swift"
+            timestampString = "575580104.59314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "triage(imageFileName:destinationIndexPath:destinationViewController:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyFoods/MainApp/MainScreen/CommunicationChannelProtocol.swift"
+            timestampString = "575580104.593223"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "triage(imageFileName:destinationIndexPath:destinationViewController:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

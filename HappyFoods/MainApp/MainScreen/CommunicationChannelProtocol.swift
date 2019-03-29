@@ -52,6 +52,12 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelGreen?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
             
                 communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
+                
+                    tickChannel?.giveTick(image_file_name: imageFileName)
+                
+              //  communicationChannelTrying?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+                
+                   // GiveTickChannel.giveTick(image_file_name: imageFileName)
             
             break
             
@@ -59,13 +65,17 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelRed?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
             
                 communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
+                
+                tickChannel?.giveTick(image_file_name: imageFileName)
             break
             
             case ( .no, .yes) :
             
-            communicationChannelGreen?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
+                communicationChannelGreen?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
             
-            communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
+                communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
+                
+                tickChannel?.giveTick(image_file_name: imageFileName)
             
             break
             
@@ -74,6 +84,8 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelAmber?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
             
                 communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
+                
+                tickChannel?.giveTick(image_file_name: imageFileName)
             
             break
             
@@ -112,7 +124,7 @@ extension YesCollectionViewController: CommunicationChannel{
         do{
             let foodArrayFull = try context.fetch(request)
             let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
-            draggedFood.rating = 0
+            draggedFood.rating = 1
             foodArray.insert(draggedFood, at: destinationIndexPath.row)
         }
         catch{
@@ -140,21 +152,27 @@ extension YesCollectionViewController: CommunicationChannel{
     
 }
 
-extension TargetCollectionViewController: CommunicationChannel{
-    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
-        return
-    }
-    
-    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
-        return
-    }
-    
-    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
-        return
-    }
-    
-    
-}
+//extension TargetCollectionViewController: CommunicationChannel{
+//    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
+//        return
+//    }
+//    
+//    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
+//        let newlyTriedFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: context) as! TriedFood
+//        
+//        newlyTriedFood.imageFileName = draggedFoodFileName
+//        newlyTriedFood.dateTried = Date()
+//        saveItems()
+//        self.view.reloadInputViews()
+//        return
+//    }
+//    
+//    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
+//        return
+//    }
+//    
+//    
+//}
 
 extension MaybeCollectionViewController: CommunicationChannel{
     func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
@@ -170,7 +188,7 @@ extension MaybeCollectionViewController: CommunicationChannel{
         do{
             let foodArrayFull = try context.fetch(request)
             let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
-            draggedFood.rating = 1
+            draggedFood.rating = 2
             foodArray.insert(draggedFood, at: destinationIndexPath.row)
         }
         catch{
@@ -209,7 +227,7 @@ extension NoCollectionViewController: CommunicationChannel{
         do{
             let foodArrayFull = try context.fetch(request)
             let draggedFood = foodArrayFull.filter{$0.image_file_name == draggedFoodFileName}.filter{$0.image_file_name != "tick.png"}.first!
-            draggedFood.rating = 1
+            draggedFood.rating = 3
             foodArray.insert(draggedFood, at: destinationIndexPath.row)
         }
         catch{

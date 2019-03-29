@@ -11,7 +11,7 @@
     </entity>
     <entity name="TriedFood" representedClassName="TriedFood" syncable="YES" codeGenerationType="class">
         <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="nameOfTriedFood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageFileName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Food" positionX="-63" positionY="-18" width="128" height="90"/>

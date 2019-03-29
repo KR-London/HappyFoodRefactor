@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "targetCell"
 
 class TargetCollectionViewController: UICollectionViewController{
 //    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
 //        print("target")
 //    }
     
-     weak var delegate: CommunicationChannel?
+    @IBOutlet var targetCollectionView: UICollectionView!
+   // weak var delegate: CommunicationChannel?
+    
+    weak var delegate: GiveTickChannel?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var triedFood: [NSManagedObject] = []
+    var triedFoodArray: [TriedFood]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +32,19 @@ class TargetCollectionViewController: UICollectionViewController{
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+      //  self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        // let width = UIScreen.main.bounds.width
+        
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
+        // layout.collectionView?.contentSize.height = 200
+        
+        collectionView!.collectionViewLayout = layout
 
         // Do any additional setup after loading the view.
     }
@@ -42,53 +62,74 @@ class TargetCollectionViewController: UICollectionViewController{
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 1
+        return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
+        
+        // cell.foodImage.image = UIImage(named: "tick.png")
+        cell.tickImage.isHidden = true
+        
+        cell.removeBtnClick.isHidden = true
+        
+        //removeBtnClick
+            
+           // .isHidden = true
+
+
+
+       /// if foodsTriedThisWeek != nil
+       if triedFoodArray != nil
+        {
+            if 2*indexPath.section + indexPath.row  < triedFoodArray.count
+            {
+
+                let tickedImage = UIImage(named: triedFoodArray[2*indexPath.section + indexPath.row].imageFileName ?? "chaos.jpg")
+
+               cell.foodImage.image = tickedImage
+
+                cell.tickImage.isHidden = false
+
+//                //"tick.jpg"
+//             / if longPressedEnabled   {
+//                    cell.startAnimate()
+//                    cell.tickImage.isHidden = true
+//                }
+//                else{
+//                    longPressedEnabled = false
+//                }
+//            }
+//            else
+//            {
+//                cell.foodImage.image = nil
+//                longPressedEnabled = false
+      }
+        }
+        else
+        {
+            // cell.stopAnimate()
+        }
+
         // Configure the cell
     
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+    func saveItems(){
+        do{ try
+            context.save() }
+        catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            
+        }
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }

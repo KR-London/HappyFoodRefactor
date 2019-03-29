@@ -22,6 +22,11 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var foodImage: UIImageView!
     
+    @IBOutlet weak var tickImage: UIImageView!
+    
+    @IBOutlet weak var removeBtnClick: UIButton!
+    
+    
     
     public func displayContent(image: String)
     {
