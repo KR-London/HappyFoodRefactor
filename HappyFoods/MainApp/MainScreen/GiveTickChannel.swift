@@ -33,7 +33,8 @@ extension TargetCollectionViewController : GiveTickChannel {
         newlyTriedFood.imageFileName = image_file_name
         newlyTriedFood.dateTried = Date()
         saveItems()
-        self.view.reloadInputViews()
+        //self.view.reloadInputViews()
+        self.targetCollectionView.reloadData()
  }
     
     

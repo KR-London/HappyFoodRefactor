@@ -23,6 +23,7 @@ class TargetCollectionViewController: UICollectionViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         // let width = UIScreen.main.bounds.width
@@ -103,5 +104,22 @@ class TargetCollectionViewController: UICollectionViewController{
         }
     }
 
+    /// MARK: Setup
+    func loadItems(){
+        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try
+                triedFoodArray = context.fetch(request)
+        }
+        catch
+        {
+            print("Error fetching data \(error)")
+        }
+    }
+    
+    public func canHandle(_ session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: NSString.self)
+    }
 
+    
 }
