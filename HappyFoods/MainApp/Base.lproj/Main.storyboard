@@ -108,49 +108,6 @@
             </objects>
             <point key="canvasLocation" x="-2474" y="-833"/>
         </scene>
-        <!--No Collection View Controller-->
-        <scene sceneID="7rf-KN-uki">
-            <objects>
-                <collectionViewController storyboardIdentifier="redScreen" title="No Collection View Controller" id="6V0-DE-PIY" customClass="CustomCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tac-VX-D7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewLayout key="collectionViewLayout" id="4Ko-vT-k7F" customClass="narrowCollectionViewLayout" customModule="HappyFoods" customModuleProvider="target"/>
-                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bad.png" id="q8k-E5-2MZ">
-                            <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="noCell" id="51V-nA-yeR" customClass="CustomCollectionViewCell" customModule="HappyFoods" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SjU-y8-ddd">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SjU-y8-ddd" secondAttribute="bottom" id="991-tB-JwW"/>
-                                    <constraint firstAttribute="trailing" secondItem="SjU-y8-ddd" secondAttribute="trailing" id="G2l-jA-58o"/>
-                                    <constraint firstItem="SjU-y8-ddd" firstAttribute="top" secondItem="51V-nA-yeR" secondAttribute="top" id="JC7-GJ-eCG"/>
-                                    <constraint firstItem="SjU-y8-ddd" firstAttribute="leading" secondItem="51V-nA-yeR" secondAttribute="leading" id="acI-Gs-Fw5"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="foodImage" destination="SjU-y8-ddd" id="cHy-VC-ACn"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8IV-Hb-h8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4054" y="-675"/>
-        </scene>
         <!--Main View Controller-->
         <scene sceneID="vLX-po-XMi">
             <objects>
@@ -172,7 +129,7 @@
         <!--No Collection View Controller-->
         <scene sceneID="laT-9p-qGT">
             <objects>
-                <collectionViewController storyboardIdentifier="tempScreen" id="qna-mc-mf5" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="redScreen" id="qna-mc-mf5" customClass="NoCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" id="WPR-yU-TV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

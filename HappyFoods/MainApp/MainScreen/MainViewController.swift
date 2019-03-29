@@ -65,23 +65,16 @@ class MainViewController: UIViewController {
         let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
         let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
         let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempMaybe") as? MaybeCollectionViewController)!
-        // let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? CustomCollectionViewController)!
-        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempScreen") as? NoCollectionViewController)!
+        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? NoCollectionViewController)!
         
         var stackView: UIStackView!
         var scrollView: UIScrollView!
         
         yesVC.delegate = self
-       // targetVC.delegate = self
         maybeVC.delegate = self
-        //  tempVC.delegate = self
         noVC.delegate = self
-        
     
-    
-        
         communicationChannelGreen = yesVC
-        //communicationChannelTrying = targetVC
         communicationChannelAmber = maybeVC
         communicationChannelRed = noVC
     
@@ -117,41 +110,7 @@ class MainViewController: UIViewController {
         return scrollView
     }
     
-    func setUpCollectionViewNoScrollingStack( ) -> UIView {
-        let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
-        let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
-        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
-        // let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? CustomCollectionViewController)!
-        
-        let nooVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempScreen") as? NoCollectionViewController)!
  
-        
-        yesVC.delegate = self
-        targetVC.delegate = self
-        maybeVC.delegate = self
-        //  tempVC.delegate = self
-        nooVC.delegate = self
-        
-        communicationChannelGreen = yesVC
-       // communicationChannelTarget = targetVC
-        communicationChannelAmber = maybeVC
-        communicationChannelRed = nooVC
-        //   communicationChannelTemp = tempVC
-        
-        
-        self.addChildViewControllerCustom(childViewController: yesVC)
-        self.addChildViewControllerCustom(childViewController: targetVC)
-        self.addChildViewControllerCustom(childViewController: maybeVC)
-        self.addChildViewControllerCustom(childViewController: nooVC)
-        
-        yesVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5 ).isActive = true
-        targetVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
-        maybeVC.view.heightAnchor.constraint(equalToConstant: 2*CONTENT_HEIGHT/5).isActive = true
-        nooVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
-        
-        
-        return self.view
-    }
  
     private func addChildViewControllerCustom(childViewController: UICollectionViewController){
         addChild(childViewController)
@@ -167,105 +126,4 @@ class MainViewController: UIViewController {
             performSegue(withIdentifier: "goToCamera", sender: self)
         }
     }
-    
-    func doesThisGetATick(sourceIndexPath: IndexPath, from: String, to: String)
-    {
-//        var unique = [Int]()
-//        /// check for uniqueness
-//        for i in 0 ... foodsTriedThisWeek.count-1
-//        {
-//            if i > 0
-//            {
-//                if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
-//                {
-//                    // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-//                    // return
-//                    unique = [i] + unique            }
-//            }
-//        }
-//        
-//        if unique.count > 0
-//        {
-//            for i in 0 ... unique.count - 1
-//            {
-//                foodsTriedThisWeek.remove(at: unique[i])
-//            }
-//            
-//            /// this is the bug. A failed drop gives an extra 'food tried this week' - but can end up with no tick allocated at this stage.
-////            if visibleTicks == foodsTriedThisWeek.count
-////            {
-////                return
-////            }
-//        }
-//        
-//        /// if it is unique, then give the use a smiley!
-//        communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: to)
-//        
-//        /// and save down to coreData
-//        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//            let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-//            
-//            newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
-//            newFood.dateTried = nil
-//        }
-    }
-    
-//    func setUpCollectionViewScrollingStack( ) -> UIView {
-//        let yesVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "greenScreen") as? YesCollectionViewController)!
-//        let targetVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tryingScreen") as? TargetCollectionViewController)!
-//        let maybeVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "amberScreen") as? MaybeCollectionViewController)!
-//        // let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "redScreen") as? CustomCollectionViewController)!
-//        let noVC = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "tempScreen") as? NoCollectionViewController)!
-//        
-//        var stackView: UIStackView!
-//        var scrollView: UIScrollView!
-//        
-//        yesVC.delegate = self
-//        targetVC.delegate = self
-//        maybeVC.delegate = self
-//        //  tempVC.delegate = self
-//        noVC.delegate = self
-//        
-//        
-//        
-//        communicationChannelGreen = yesVC
-//        communicationChannelTrying = targetVC
-//        communicationChannelAmber = maybeVC
-//        communicationChannelRed = noVC
-//        
-//        targetVC.delegateTick = self
-//        tickChannel = targetVC
-//        
-//        
-//        self.addChildViewControllerCustom(childViewController: yesVC)
-//        self.addChildViewControllerCustom(childViewController: targetVC)
-//        self.addChildViewControllerCustom(childViewController: maybeVC)
-//        self.addChildViewControllerCustom(childViewController: noVC)
-//        
-//        yesVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5 ).isActive = true
-//        targetVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
-//        maybeVC.view.heightAnchor.constraint(equalToConstant: 2*CONTENT_HEIGHT/5).isActive = true
-//        noVC.view.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT/5).isActive = true
-//        
-//        stackView = UIStackView(arrangedSubviews: [yesVC.view, targetVC.view, maybeVC.view, noVC.view])
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.axis = .vertical
-//        stackView.spacing = 0
-//        
-//        
-//        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-//        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CONTENT_HEIGHT)
-//        scrollView.addSubview(stackView)
-//        
-//        scrollView.addSubview(stackView)
-//        NSLayoutConstraint.activate([
-//            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-//            stackView.heightAnchor.constraint(equalToConstant: CONTENT_HEIGHT),
-//            ])
-//        
-//        return scrollView
-//    }
-    
-    
-
 }

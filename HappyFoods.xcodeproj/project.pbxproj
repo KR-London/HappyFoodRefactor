@@ -80,7 +80,6 @@
 		4497E28F2209DB8C00254128 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E28E2209DB8C00254128 /* OnboardingView1.swift */; };
 		44A27FB62237DD5400244A96 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */; };
 		44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FB72237F4DB00244A96 /* CustomViewController2.swift */; };
-		44A27FBE2238239600244A96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A27FBD2238239600244A96 /* MainView.swift */; };
 		44A5DF81223FA194008EF562 /* Extensions_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5DF80223FA194008EF562 /* Extensions_UIView.swift */; };
 		44A5DF83223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */; };
 		44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3D6332231341200A96B28 /* OnboardingView2.swift */; };
@@ -183,7 +182,6 @@
 		4497E28E2209DB8C00254128 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		44A27FB72237F4DB00244A96 /* CustomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController2.swift; sourceTree = "<group>"; };
-		44A27FBD2238239600244A96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		44A5DF80223FA194008EF562 /* Extensions_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_UIView.swift; sourceTree = "<group>"; };
 		44A5DF82223FA9E8008EF562 /* GlobalProportionConstantsAreHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProportionConstantsAreHere.swift; sourceTree = "<group>"; };
 		44B3D6332231341200A96B28 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
@@ -432,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				44CC662C22391DEF00540374 /* MainViewController.swift */,
-				44A27FBD2238239600244A96 /* MainView.swift */,
 				44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */,
 				44210E19224CE4AD00EFFC58 /* GiveTickChannel.swift */,
 				4409EBF422496E6C00E6983A /* TriedFoodObject.swift */,
@@ -609,7 +606,6 @@
 				44BCE7962242C53A00EF5C38 /* AppUtility.swift in Sources */,
 				44F085462244047900505AE8 /* CustomCollectionViewController.swift in Sources */,
 				447ACD4C22340BFF001748D3 /* NoCollectionViewController.swift in Sources */,
-				44A27FBE2238239600244A96 /* MainView.swift in Sources */,
 				44B3D6342231341200A96B28 /* OnboardingView2.swift in Sources */,
 				447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */,
 				44B3D6372231349200A96B28 /* OnboardingView3.swift in Sources */,

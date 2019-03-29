@@ -5,10 +5,7 @@ import CoreData
 //A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements
 
 protocol CommunicationChannel : class {
-    // func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
-    // func sayHello()
-    
-    // var draggedFood: Pokemon { get set }
+
     // here i decide if I add to foods tried this week
     func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon)
     
@@ -53,11 +50,8 @@ extension MainViewController:CommunicationChannel{
             
                 communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
                 
-                    tickChannel?.giveTick(image_file_name: imageFileName)
-                
-              //  communicationChannelTrying?.insertIntoTargetRibbon(draggedFoodFileName: imageFileName, destinationIndexPath: destinationIndexPath)
-                
-                   // GiveTickChannel.giveTick(image_file_name: imageFileName)
+                tickChannel?.giveTick(image_file_name: imageFileName)
+    
             
             break
             
@@ -140,10 +134,7 @@ extension YesCollectionViewController: CommunicationChannel{
         /// this deletes the item from the ribbon.
         self.yesCollectionView.performBatchUpdates({
             foodArray.remove(at: sourceIndexPath.row)
-            self.yesCollectionView.deleteItems(at: [sourceIndexPath])
-            // self.boxCollectionView.collectionViewLayout.invalidateLayout()
-            // self.boxCollectionView.collectionViewLayout.prepare()
-            
+            self.yesCollectionView.deleteItems(at: [sourceIndexPath])            
         })
         
         return
@@ -151,28 +142,6 @@ extension YesCollectionViewController: CommunicationChannel{
     
     
 }
-
-//extension TargetCollectionViewController: CommunicationChannel{
-//    func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
-//        return
-//    }
-//    
-//    func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
-//        let newlyTriedFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: context) as! TriedFood
-//        
-//        newlyTriedFood.imageFileName = draggedFoodFileName
-//        newlyTriedFood.dateTried = Date()
-//        saveItems()
-//        self.view.reloadInputViews()
-//        return
-//    }
-//    
-//    func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
-//        return
-//    }
-//    
-//    
-//}
 
 extension MaybeCollectionViewController: CommunicationChannel{
     func triage(imageFileName: String, destinationIndexPath: IndexPath, destinationViewController: Ribbon) {
@@ -201,12 +170,9 @@ extension MaybeCollectionViewController: CommunicationChannel{
     }
     
     func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
-        /// this deletes the item from the ribbon.
-        /// where do I update food Array...?
         self.maybeCollectionView.performBatchUpdates({
             foodArray.remove(at: sourceIndexPath.row)
             self.maybeCollectionView.deleteItems(at: [sourceIndexPath])
-            // self.teamCollectionView.collectionViewLayout.invalidateLayout()
         })
         
         return
@@ -241,11 +207,9 @@ extension NoCollectionViewController: CommunicationChannel{
     
     func removeFromSourceRibbon(imageFileName: String, sourceIndexPath: IndexPath, sourceRibbon: Ribbon) {
         /// this deletes the item from the ribbon.
-        /// where do I update food Array...?
         self.noCollectionView.performBatchUpdates({
             foodArray.remove(at: sourceIndexPath.row)
             self.noCollectionView.deleteItems(at: [sourceIndexPath])
-            // self.teamCollectionView.collectionViewLayout.invalidateLayout()
         })
         
         return

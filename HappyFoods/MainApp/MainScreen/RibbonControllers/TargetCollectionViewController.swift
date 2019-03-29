@@ -12,12 +12,8 @@ import CoreData
 private let reuseIdentifier = "targetCell"
 
 class TargetCollectionViewController: UICollectionViewController{
-//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-//        print("target")
-//    }
-    
+
     @IBOutlet var targetCollectionView: UICollectionView!
-   // weak var delegate: CommunicationChannel?
     
     weak var delegate: GiveTickChannel?
     
@@ -27,17 +23,12 @@ class TargetCollectionViewController: UICollectionViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-      //  self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         // let width = UIScreen.main.bounds.width
         
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        // change this
         layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
@@ -48,18 +39,6 @@ class TargetCollectionViewController: UICollectionViewController{
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
@@ -78,13 +57,6 @@ class TargetCollectionViewController: UICollectionViewController{
         
         cell.removeBtnClick.isHidden = true
         
-        //removeBtnClick
-            
-           // .isHidden = true
-
-
-
-       /// if foodsTriedThisWeek != nil
        if triedFoodArray != nil
         {
             if 2*indexPath.section + indexPath.row  < triedFoodArray.count
