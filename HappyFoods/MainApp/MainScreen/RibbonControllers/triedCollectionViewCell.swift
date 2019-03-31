@@ -42,7 +42,7 @@ class triedCollectionViewCell: UICollectionViewCell {
         }
         
         func setup(){
-            self.layer.borderWidth = 1.0
+            self.layer.borderWidth = 5.0
             self.layer.borderColor = UIColor.white.cgColor
             self.layer.cornerRadius = 5.0
         }

@@ -57,7 +57,7 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
                 
                  let tickCount  = tickChannel?.giveTick(image_file_name: imageFileName) ?? 0
-                if tickCount >= 8 { performSegue(withIdentifier: "celebration", sender: self)}
+                if tickCount == 8 { performSegue(withIdentifier: "celebration", sender: self)}
                 
             break
             
@@ -66,7 +66,7 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
                 
                 let tickCount  = tickChannel?.giveTick(image_file_name: imageFileName) ?? 0
-                if tickCount >= 8 { performSegue(withIdentifier: "celebration", sender: self)}
+                if tickCount == 8 { performSegue(withIdentifier: "celebration", sender: self)}
             
             break
             
@@ -77,7 +77,7 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelRed?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .no)
                 
                 let tickCount  = tickChannel?.giveTick(image_file_name: imageFileName) ?? 0 
-                if tickCount >= 8 { performSegue(withIdentifier: "celebration", sender: self)}
+                if tickCount == 8 { performSegue(withIdentifier: "celebration", sender: self)}
             
             break
             
@@ -112,6 +112,9 @@ extension YesCollectionViewController: CommunicationChannel{
     func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
         /// I will put the drop delegate code in here.
         /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        
+        self.yesCollectionView.endInteractiveMovement()
+        
         let request : NSFetchRequest<Food> = Food.fetchRequest()
         do{
             let foodArrayFull = try context.fetch(request)
@@ -150,6 +153,8 @@ extension MaybeCollectionViewController: CommunicationChannel{
     func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
         /// I will put the drop delegate code in here.
         /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        self.maybeCollectionView.endInteractiveMovement()
+        
         // I need to pull the record out of the database
         let request : NSFetchRequest<Food> = Food.fetchRequest()
         do{
@@ -186,6 +191,9 @@ extension NoCollectionViewController: CommunicationChannel{
     func insertIntoTargetRibbon(draggedFoodFileName: String, destinationIndexPath: IndexPath) {
         /// I will put the drop delegate code in here.
         /// I could do it direct in the drop delegate code, but I prefer to deal with it here to reduce the chance of the item being dropped without being removed from the source
+        
+        self.noCollectionView.endInteractiveMovement()
+        
         // I need to pull the record out of the database
         let request : NSFetchRequest<Food> = Food.fetchRequest()
         do{
