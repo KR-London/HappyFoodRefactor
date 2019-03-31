@@ -47,7 +47,14 @@ extension TargetCollectionViewController : GiveTickChannel {
             targetCollectionView.performBatchUpdates({
             triedFoodArray.append(newlyTriedFood)
             let sectionIndex = Int((triedFoodArray.count - 1)/2)
-            self.targetCollectionView.reloadSections([sectionIndex])
+            if triedFoodArray.count > 8
+            {
+                //self.targetCollectionView.numberOfSections
+                self.targetCollectionView.reloadData()
+                self.targetCollectionView.reloadInputViews()
+                self.targetCollectionView.numberOfSections.advanced(by: 1)
+            }
+            //self.targetCollectionView.reloadSections([sectionIndex])
         })
         
         saveItems()

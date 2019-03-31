@@ -242,7 +242,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="tryingScreen" title="Target View Controller" id="aQA-9E-BLP" customClass="TargetCollectionViewController" customModule="HappyFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" id="3VC-al-XHE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nr9-An-Crc">
@@ -252,11 +252,11 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trying.png" id="bTI-13-MbG">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="targetCell" id="atm-ys-hEX" customClass="CustomCollectionViewCell" customModule="HappyFoods" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="targetCell" id="atm-ys-hEX" customClass="triedCollectionViewCell" customModule="HappyFoods" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -264,13 +264,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-fM-7EA">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OS5-hG-tc4">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-yp-yNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                             <state key="normal" title="Button" image="cross.png"/>
                                             <connections>
                                                 <action selector="RmvButtonClick:" destination="aQA-9E-BLP" eventType="touchUpInside" id="r9q-8D-VJg"/>
@@ -293,9 +293,9 @@
                                     <constraint firstItem="XAu-fM-7EA" firstAttribute="top" secondItem="atm-ys-hEX" secondAttribute="top" id="yUH-2u-wrL"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="foodImage" destination="XAu-fM-7EA" id="fBz-Zc-hoN"/>
-                                    <outlet property="removeBtnClick" destination="ygR-yp-yNh" id="CSY-yQ-YaX"/>
-                                    <outlet property="tickImage" destination="OS5-hG-tc4" id="hAk-eQ-eQ2"/>
+                                    <outlet property="foodImage" destination="XAu-fM-7EA" id="dKN-8B-Ihh"/>
+                                    <outlet property="removeBtnClick" destination="ygR-yp-yNh" id="l6b-bM-d4f"/>
+                                    <outlet property="tickImage" destination="OS5-hG-tc4" id="dT3-2O-YL3"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -316,61 +316,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chaos_ Chaos_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-0X-14i">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Onboarding2Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-0X-14i">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2IV-v0-9XK">
-                                <rect key="frame" x="30" y="204" width="315" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="PwW-jg-xa9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 tries achieved!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVM-at-EFX">
-                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 tries achieved!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVM-at-EFX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-14-kbU">
+                                        <rect key="frame" x="0.0" y="89" width="375" height="136"/>
+                                        <connections>
+                                            <segue destination="aQA-9E-BLP" kind="embed" id="QRo-FX-abb"/>
+                                        </connections>
+                                    </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-IQ-Awz">
+                                        <rect key="frame" x="0.0" y="290" width="375" height="72"/>
+                                        <string key="text">“Maybe the hardest part of life is just having the courage to try.” 
+― Rachel Hollis, Party Girl</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ms-xb-wPB">
+                                        <rect key="frame" x="0.0" y="427" width="375" height="220"/>
+                                        <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <segue destination="1Wv-wj-gyF" kind="show" id="yjG-j7-bdb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-IQ-Awz">
-                                <rect key="frame" x="30" y="256.5" width="315" height="61"/>
-                                <string key="text">“Maybe the hardest part of life is just having the courage to try.” 
-― Rachel Hollis, Party Girl</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ms-xb-wPB">
-                                <rect key="frame" x="16" y="444" width="203" height="203"/>
-                                <state key="normal" image="back.png"/>
-                                <connections>
-                                    <segue destination="1Wv-wj-gyF" kind="show" id="yjG-j7-bdb"/>
-                                </connections>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-14-kbU">
-                                <rect key="frame" x="0.0" y="325" width="375" height="94"/>
-                                <connections>
-                                    <segue destination="aQA-9E-BLP" kind="embed" id="QRo-FX-abb"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2IV-v0-9XK" firstAttribute="trailing" secondItem="8qy-IQ-Awz" secondAttribute="trailing" id="0dK-Va-xpq"/>
-                            <constraint firstItem="2IV-v0-9XK" firstAttribute="top" secondItem="6uc-BH-gre" secondAttribute="top" constant="184" id="4Rf-hT-fZz"/>
-                            <constraint firstItem="1P7-14-kbU" firstAttribute="top" secondItem="8qy-IQ-Awz" secondAttribute="bottom" constant="7.5" id="Cj3-hs-fKN"/>
-                            <constraint firstItem="1P7-14-kbU" firstAttribute="leading" secondItem="6uc-BH-gre" secondAttribute="leading" id="CoU-g9-xMM"/>
-                            <constraint firstItem="2IV-v0-9XK" firstAttribute="leading" secondItem="6uc-BH-gre" secondAttribute="leading" constant="30" id="K3E-a1-BWJ"/>
-                            <constraint firstItem="SBt-0X-14i" firstAttribute="trailing" secondItem="6uc-BH-gre" secondAttribute="trailing" id="KNN-la-hjz"/>
-                            <constraint firstAttribute="bottom" secondItem="8ms-xb-wPB" secondAttribute="bottom" constant="20" symbolic="YES" id="Qeh-ip-stz"/>
-                            <constraint firstItem="2IV-v0-9XK" firstAttribute="top" secondItem="6uc-BH-gre" secondAttribute="top" constant="184" id="TIx-Gm-vCl"/>
-                            <constraint firstItem="2IV-v0-9XK" firstAttribute="leading" secondItem="8qy-IQ-Awz" secondAttribute="leading" id="UPn-YH-e8X"/>
-                            <constraint firstItem="8qy-IQ-Awz" firstAttribute="top" secondItem="2IV-v0-9XK" secondAttribute="bottom" constant="32" id="cry-hW-plc"/>
-                            <constraint firstItem="6uc-BH-gre" firstAttribute="trailing" secondItem="2IV-v0-9XK" secondAttribute="trailing" constant="30" id="e1s-IT-XsL"/>
-                            <constraint firstItem="8ms-xb-wPB" firstAttribute="top" secondItem="1P7-14-kbU" secondAttribute="bottom" constant="25" id="hYe-YR-aKt"/>
-                            <constraint firstItem="8ms-xb-wPB" firstAttribute="leading" secondItem="NTr-Gf-4Zu" secondAttribute="leadingMargin" id="l5P-GG-H4V"/>
-                            <constraint firstItem="SBt-0X-14i" firstAttribute="leading" secondItem="NTr-Gf-4Zu" secondAttribute="leading" id="m5y-KY-vYn"/>
-                            <constraint firstItem="SBt-0X-14i" firstAttribute="top" secondItem="NTr-Gf-4Zu" secondAttribute="top" id="nuT-0E-h01"/>
-                            <constraint firstItem="SBt-0X-14i" firstAttribute="bottom" secondItem="6uc-BH-gre" secondAttribute="bottom" id="y2c-kA-IVA"/>
-                            <constraint firstItem="1P7-14-kbU" firstAttribute="trailing" secondItem="6uc-BH-gre" secondAttribute="trailing" id="z9L-Cu-6zL"/>
+                            <constraint firstItem="PwW-jg-xa9" firstAttribute="top" secondItem="6uc-BH-gre" secondAttribute="top" id="6cp-j9-F3j"/>
+                            <constraint firstAttribute="trailing" secondItem="PwW-jg-xa9" secondAttribute="trailing" id="DAC-Qb-2iE"/>
+                            <constraint firstItem="PwW-jg-xa9" firstAttribute="leading" secondItem="6uc-BH-gre" secondAttribute="leading" id="Psc-g7-rpJ"/>
+                            <constraint firstItem="6uc-BH-gre" firstAttribute="bottom" secondItem="PwW-jg-xa9" secondAttribute="bottom" id="XWz-Kg-zOU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6uc-BH-gre"/>
                     </view>
@@ -496,9 +484,9 @@
     <resources>
         <image name="Bad.png" width="2100" height="658"/>
         <image name="Camera-2.png" width="203" height="203"/>
-        <image name="Chaos_ Chaos_2.png" width="3023" height="4032"/>
         <image name="Good.png" width="2100" height="658"/>
         <image name="Maybe.png" width="2100" height="1316"/>
+        <image name="Onboarding2Background.png" width="3023" height="4031"/>
         <image name="back.png" width="203" height="203"/>
         <image name="cross.png" width="167" height="168"/>
         <image name="roll.png" width="203" height="203"/>

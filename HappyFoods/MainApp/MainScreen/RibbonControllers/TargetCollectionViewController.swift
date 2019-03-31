@@ -57,10 +57,7 @@ class TargetCollectionViewController: UICollectionViewController{
 //                    self.targetCollectionView.reloadSections([(hitIndex?.section)!])
                     self.targetCollectionView.reloadSections([0,1,2,3])
                     self.reloadInputViews()
-                    
-                    
-                    //self.targetCollectionView.
-                    
+
                 }
      }
     
@@ -98,7 +95,7 @@ class TargetCollectionViewController: UICollectionViewController{
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return max(4, (triedFoodArray.count+1)/2)
     }
 
 
@@ -107,12 +104,14 @@ class TargetCollectionViewController: UICollectionViewController{
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! triedCollectionViewCell
         
         // cell.foodImage.image = UIImage(named: "tick.png")
         cell.tickImage.isHidden = true
-        
         cell.removeBtnClick.isHidden = true
+        
+        cell.layer.borderWidth = 1.0
+       // cell.layer.borderColor = UIColor.white as! CGColor
         
        if triedFoodArray != nil
         {

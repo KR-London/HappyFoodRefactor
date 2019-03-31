@@ -36,6 +36,7 @@
 		44210E1A224CE4AD00EFFC58 /* GiveTickChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44210E19224CE4AD00EFFC58 /* GiveTickChannel.swift */; };
 		4428BEFC224BDB580023FC08 /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BEFB224BDB580023FC08 /* CongratulationViewController.swift */; };
 		44365CA92240F92F006E4372 /* CommunicationChannelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */; };
+		44671A8D22510C2300236847 /* triedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44671A8C22510C2300236847 /* triedCollectionViewCell.swift */; };
 		447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */; };
 		447ACD4822340BE2001748D3 /* TargetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */; };
 		447ACD4A22340BEC001748D3 /* MaybeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */; };
@@ -134,6 +135,7 @@
 		44210E19224CE4AD00EFFC58 /* GiveTickChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveTickChannel.swift; sourceTree = "<group>"; };
 		4428BEFB224BDB580023FC08 /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
 		44365CA82240F92F006E4372 /* CommunicationChannelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationChannelProtocol.swift; sourceTree = "<group>"; };
+		44671A8C22510C2300236847 /* triedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = triedCollectionViewCell.swift; sourceTree = "<group>"; };
 		447ACD4522340BD5001748D3 /* YesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewController.swift; sourceTree = "<group>"; };
 		447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewController.swift; sourceTree = "<group>"; };
 		447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				44803C9621F1DB660053AECB /* Main.storyboard */,
+				44671A8C22510C2300236847 /* triedCollectionViewCell.swift */,
 				44B3D6422232B92900A96B28 /* CongratulationView.swift */,
 				44B3D63E2232B8D300A96B28 /* CameraScreen */,
 				44B3D6412232B90C00A96B28 /* MainScreen */,
@@ -616,6 +619,7 @@
 				44803CBC21F1E8AC0053AECB /* OnboardingViewController1.swift in Sources */,
 				447ACD4622340BD5001748D3 /* YesCollectionViewController.swift in Sources */,
 				4428BEFC224BDB580023FC08 /* CongratulationViewController.swift in Sources */,
+				44671A8D22510C2300236847 /* triedCollectionViewCell.swift in Sources */,
 				44803C9B21F1DB660053AECB /* HappyFoods.xcdatamodeld in Sources */,
 				44A27FB82237F4DB00244A96 /* CustomViewController2.swift in Sources */,
 				447ACD4A22340BEC001748D3 /* MaybeCollectionViewController.swift in Sources */,
