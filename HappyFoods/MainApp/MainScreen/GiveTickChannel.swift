@@ -13,28 +13,47 @@ import MobileCoreServices
 protocol GiveTickChannel : class {
     
     
-    func giveTick(image_file_name: String)
+    func giveTick(image_file_name: String) -> Int
+    
+    func segueToCelebrationScreen()
 }
 
 extension MainViewController : GiveTickChannel {
-    func giveTick(image_file_name: String) {
+    func segueToCelebrationScreen() {
+        return
+    }
+    
+    func giveTick(image_file_name: String) -> Int {
         
        tickChannel?.giveTick(image_file_name: image_file_name)
         
+        //// shall i use this place to trigger the segue to the celebration screen, when the tried foods are filled up..?
         
-        return
+        return 0
     }
 }
 
 extension TargetCollectionViewController : GiveTickChannel {
-    func giveTick(image_file_name: String) {
+    func segueToCelebrationScreen() {
+        return
+    }
+    
+    func giveTick(image_file_name: String) -> Int {
         
-        let newlyTriedFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: context) as! TriedFood
-        newlyTriedFood.imageFileName = image_file_name
-        newlyTriedFood.dateTried = Date()
+            let newlyTriedFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: context) as! TriedFood
+            newlyTriedFood.imageFileName = image_file_name
+            newlyTriedFood.dateTried = Date()
+        
+            targetCollectionView.performBatchUpdates({
+            triedFoodArray.append(newlyTriedFood)
+            let sectionIndex = Int((triedFoodArray.count - 1)/2)
+            self.targetCollectionView.reloadSections([sectionIndex])
+        })
+        
         saveItems()
-        //self.view.reloadInputViews()
-        self.targetCollectionView.reloadData()
+        
+        return triedFoodArray?.count ?? 0
+        
  }
     
     

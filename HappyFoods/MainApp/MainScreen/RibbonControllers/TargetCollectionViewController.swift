@@ -12,10 +12,52 @@ import CoreData
 private let reuseIdentifier = "targetCell"
 
 class TargetCollectionViewController: UICollectionViewController{
+    
+    /// these variables help me to delete cells
+    var longPressGesture = UILongPressGestureRecognizer()
+    var isAnimate: Bool! = true
+    var longPressedEnabled = false
 
     @IBOutlet var targetCollectionView: UICollectionView!
     
-    weak var delegate: GiveTickChannel?
+    @IBAction func RmvButtonClick(_ sender: UIButton) {
+                let hitPoint = sender.convert(CGPoint.zero, to: self.collectionView)
+                let hitIndex = self.collectionView.indexPathForItem(at: hitPoint)
+                let indexOfThisFood = 2*(hitIndex?.section)! + (hitIndex?.row)!
+                if indexOfThisFood < triedFoodArray.count
+                {
+                    ///delete from core data
+                    if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate{
+                        let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
+                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
+                        let predicate = NSPredicate(format: "imageFileName = %@", triedFoodArray[indexOfThisFood].imageFileName ?? "")
+                        fetchRequest.predicate = predicate
+                            do{
+                                let result = try mngdCntxt.fetch(fetchRequest)
+                                mngdCntxt.delete(result.first as! NSManagedObject)
+                                }
+                        catch{  }
+//                                if result.count > 0{
+//                                    for object in result {
+//                                    mngdCntxt.delete(object as! NSManagedObject)
+//                                }
+                           // }
+                        //}catch{  }
+                    }
+                    triedFoodArray.remove(at: indexOfThisFood)
+                    //self.collectionView.reloadData()
+                  
+                    saveItems()
+                     // self.targetCollectionView.reloadInputViews()
+//                    self.targetCollectionView.reloadSections([(hitIndex?.section)!])
+                    self.targetCollectionView.reloadSections([0,1,2,3])
+                    
+                    //self.targetCollectionView.
+                    
+                }
+     }
+    
+    var delegate: GiveTickChannel?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var triedFood: [NSManagedObject] = []
@@ -25,15 +67,22 @@ class TargetCollectionViewController: UICollectionViewController{
         super.viewDidLoad()
         loadItems()
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        // let width = UIScreen.main.bounds.width
+        //adding longpress gesture over UICollectionView
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        self.view.addGestureRecognizer(longPressGesture)
         
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        let triedCellHeight = min(RIBBON_DEFAULT_HEIGHT/2.31, SCREEN_WIDTH/3.41)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+       
+        
+       layout.sectionInset = UIEdgeInsets(top: triedCellHeight/10, left: triedCellHeight/10, bottom: triedCellHeight/10, right: triedCellHeight/10)
         // change this
-        layout.itemSize = CGSize(width: 100, height: 100)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: triedCellHeight, height: triedCellHeight)
+       //layout.minimumInteritemSpacing = triedCellHeight/10
+        //layout.minimumLineSpacing = triedCellHeight/10
         layout.scrollDirection = .horizontal
+      
         // layout.collectionView?.contentSize.height = 200
         
         collectionView!.collectionViewLayout = layout
@@ -42,7 +91,7 @@ class TargetCollectionViewController: UICollectionViewController{
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
 
 
@@ -70,18 +119,18 @@ class TargetCollectionViewController: UICollectionViewController{
                 cell.tickImage.isHidden = false
 
 //                //"tick.jpg"
-//             / if longPressedEnabled   {
-//                    cell.startAnimate()
-//                    cell.tickImage.isHidden = true
-//                }
-//                else{
-//                    longPressedEnabled = false
-//                }
-//            }
-//            else
-//            {
-//                cell.foodImage.image = nil
-//                longPressedEnabled = false
+              if longPressedEnabled   {
+                    cell.startAnimate()
+                    cell.tickImage.isHidden = true
+                }
+                else{
+                    longPressedEnabled = false
+                }
+            }
+            else
+            {
+                cell.foodImage.image = nil
+                longPressedEnabled = false
       }
         }
         else
@@ -116,6 +165,40 @@ class TargetCollectionViewController: UICollectionViewController{
             print("Error fetching data \(error)")
         }
     }
+    
+    @objc func longTap(_ gesture: UIGestureRecognizer){
+        print("Long tap detected")
+        switch(gesture.state) {
+        case .began:
+            print(".began")
+            guard let selectedIndexPath = self.collectionView.indexPathForItem(at: gesture.location(in: self.collectionView))
+                else { return }
+            self.collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            break
+            //            guard let selectedIndexPath = imgcollection.indexPathForItem(at: gesture.location(in: imgcollection)) else {
+            //                return
+            //            }
+        //            imgcollection.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+            print(".changed")
+            self.collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+            break
+        //            imgcollection.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+        case .ended:
+            print(".ended")
+            self.collectionView.endInteractiveMovement()
+            //           // doneBtn.isHidden = false
+            longPressedEnabled = !longPressedEnabled
+            self.collectionView.reloadData()
+            break
+            
+        default:
+            self.collectionView.cancelInteractiveMovement()
+            break
+            
+        }
+    }
+    
     
     public func canHandle(_ session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSString.self)

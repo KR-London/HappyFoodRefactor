@@ -120,6 +120,7 @@
                     </view>
                     <connections>
                         <segue destination="z5Q-Dd-hOy" kind="show" identifier="goToCamera" id="ffB-dS-4jJ"/>
+                        <segue destination="jER-zT-AqM" kind="show" identifier="celebration" id="s6M-rs-1k9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytP-Hh-bGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,9 +269,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OS5-hG-tc4">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-yp-yNh">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-yp-yNh">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Button" image="cross.png"/>
+                                            <connections>
+                                                <action selector="RmvButtonClick:" destination="aQA-9E-BLP" eventType="touchUpInside" id="r9q-8D-VJg"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
