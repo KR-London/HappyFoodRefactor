@@ -27,36 +27,48 @@ class TargetCollectionViewController: UICollectionViewController{
                 if indexOfThisFood < triedFoodArray.count
                 {
                     ///delete from core data
-                    if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate{
-                        let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
-                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
-                        let predicate = NSPredicate(format: "imageFileName = %@", triedFoodArray[indexOfThisFood].imageFileName ?? "")
-                        fetchRequest.predicate = predicate
-                            do{
-                                let result = try mngdCntxt.fetch(fetchRequest)
-                                if result.count > 0 {
-                                        mngdCntxt.delete(result.first as! NSManagedObject)
-                                }
-                                else{
-                                    print("that's strange - you tried to delete a picture which didnt exist ")
-                                }
-                            }
-                                catch{  }
-//                                if result.count > 0{
-//                                    for object in result {
-//                                    mngdCntxt.delete(object as! NSManagedObject)
+//                    if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate{
+//                        let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
+//                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
+//                        let predicate = NSPredicate(format: "imageFileName = %@", triedFoodArray[indexOfThisFood].imageFileName ?? "")
+//                        fetchRequest.predicate = predicate
+//                            do{
+//                                let result = try mngdCntxt.fetch(fetchRequest)
+//                                if result.count > 0 {
+//                                        mngdCntxt.delete(result.first as! NSManagedObject)
 //                                }
-                           // }
-                        //}catch{  }
-                    }
-                    triedFoodArray.remove(at: indexOfThisFood)
+//                                else{
+//                                    print("that's strange - you tried to delete a picture which didnt exist ")
+//                                }
+//                            }
+//                                catch{  }
+////                                if result.count > 0{
+////                                    for object in result {
+////                                    mngdCntxt.delete(object as! NSManagedObject)
+////                                }
+//                           // }
+//                        //}catch{  }
+//                    }
+                    self.targetCollectionView.performBatchUpdates({
+                        triedFoodArray.remove(at: indexOfThisFood)
                     //self.collectionView.reloadData()
                   
-                    saveItems()
+                        saveItems()
                      // self.targetCollectionView.reloadInputViews()
 //                    self.targetCollectionView.reloadSections([(hitIndex?.section)!])
-                    self.targetCollectionView.reloadSections([0,1,2,3])
-                    self.reloadInputViews()
+                        if self.targetCollectionView.numberOfSections > max((triedFoodArray.count + 1)/2, 4 )
+                        {
+                            self.targetCollectionView.deleteSections([self.targetCollectionView.numberOfSections - 1 ])
+                        }
+                    
+                        for x in 0 ... self.targetCollectionView.numberOfSections - 1 
+                        {
+                            self.targetCollectionView.reloadSections([x])
+                        }
+                        
+                        self.reloadInputViews()
+                        
+                    })
 
                 }
      }
@@ -95,7 +107,8 @@ class TargetCollectionViewController: UICollectionViewController{
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return max(4, (triedFoodArray.count+1)/2)
+       // return (triedFoodArray.count+1)/2
+       return max(4, (triedFoodArray.count+1)/2)
     }
 
 
@@ -110,8 +123,10 @@ class TargetCollectionViewController: UICollectionViewController{
         cell.tickImage.isHidden = true
         cell.removeBtnClick.isHidden = true
         
-        cell.layer.borderWidth = 1.0
-       // cell.layer.borderColor = UIColor.white as! CGColor
+        if indexPath.section >= 4
+        {
+            cell.layer.borderWidth = 0
+        }
         
        if triedFoodArray != nil
         {

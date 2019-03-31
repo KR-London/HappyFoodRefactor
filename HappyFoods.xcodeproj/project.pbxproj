@@ -365,7 +365,6 @@
 			isa = PBXGroup;
 			children = (
 				44803C9621F1DB660053AECB /* Main.storyboard */,
-				44671A8C22510C2300236847 /* triedCollectionViewCell.swift */,
 				44B3D6422232B92900A96B28 /* CongratulationView.swift */,
 				44B3D63E2232B8D300A96B28 /* CameraScreen */,
 				44B3D6412232B90C00A96B28 /* MainScreen */,
@@ -451,6 +450,7 @@
 				447ACD4722340BE2001748D3 /* TargetCollectionViewController.swift */,
 				447ACD4922340BEC001748D3 /* MaybeCollectionViewController.swift */,
 				447ACD4B22340BFF001748D3 /* NoCollectionViewController.swift */,
+				44671A8C22510C2300236847 /* triedCollectionViewCell.swift */,
 				44A27FB52237DD5400244A96 /* CustomCollectionViewCell.swift */,
 			);
 			path = RibbonControllers;

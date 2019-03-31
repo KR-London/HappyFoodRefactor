@@ -49,7 +49,7 @@ extension MainViewController:CommunicationChannel{
                 communicationChannelAmber?.removeFromSourceRibbon(imageFileName: imageFileName, sourceIndexPath: triedFood.sourceIndexPath, sourceRibbon: .maybe)
                 
                 let tickCount  = tickChannel?.giveTick(image_file_name: imageFileName) ?? 0
-                if tickCount >= 8 { performSegue(withIdentifier: "celebration", sender: self)}
+                if tickCount == 8 { performSegue(withIdentifier: "celebration", sender: self)}
             break
             
             case (.maybe, .no):
