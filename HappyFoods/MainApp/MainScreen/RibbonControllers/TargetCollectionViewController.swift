@@ -34,9 +34,14 @@ class TargetCollectionViewController: UICollectionViewController{
                         fetchRequest.predicate = predicate
                             do{
                                 let result = try mngdCntxt.fetch(fetchRequest)
-                                mngdCntxt.delete(result.first as! NSManagedObject)
+                                if result.count > 0 {
+                                        mngdCntxt.delete(result.first as! NSManagedObject)
                                 }
-                        catch{  }
+                                else{
+                                    print("that's strange - you tried to delete a picture which didnt exist ")
+                                }
+                            }
+                                catch{  }
 //                                if result.count > 0{
 //                                    for object in result {
 //                                    mngdCntxt.delete(object as! NSManagedObject)
@@ -51,6 +56,8 @@ class TargetCollectionViewController: UICollectionViewController{
                      // self.targetCollectionView.reloadInputViews()
 //                    self.targetCollectionView.reloadSections([(hitIndex?.section)!])
                     self.targetCollectionView.reloadSections([0,1,2,3])
+                    self.reloadInputViews()
+                    
                     
                     //self.targetCollectionView.
                     
