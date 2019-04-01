@@ -144,6 +144,8 @@ class TargetCollectionViewController: UICollectionViewController{
                 }
                 else{
                     longPressedEnabled = false
+                    cell.stopAnimate()
+
                 }
             }
             else{
@@ -154,8 +156,7 @@ class TargetCollectionViewController: UICollectionViewController{
         else{
             cell.stopAnimate()
         }
-
-        // Configure the cell
+                // Configure the cell
     
         return cell
     }

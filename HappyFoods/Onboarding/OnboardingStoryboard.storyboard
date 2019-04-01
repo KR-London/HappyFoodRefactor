@@ -35,13 +35,90 @@
                     <view key="view" contentMode="scaleToFill" id="U6E-lc-lfE" customClass="OnboardingView2" customModule="HappyFoods" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding2Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-HN-dAi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pM-Vw-2gU">
+                                <rect key="frame" x="20" y="172.5" width="335" height="322.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Happy Foods is in your pocket and you are in charge. 
+
+Pick foods to try from amber or red.
+
+Try it &amp; drag it. Up for yum and down for yuck. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eTB-HN-dAi" firstAttribute="top" secondItem="WO6-Tu-XHa" secondAttribute="top" id="0Te-yk-Tf5"/>
+                            <constraint firstItem="6pM-Vw-2gU" firstAttribute="centerY" secondItem="U6E-lc-lfE" secondAttribute="centerY" id="ExG-Pc-Gdr"/>
+                            <constraint firstItem="6pM-Vw-2gU" firstAttribute="centerX" secondItem="U6E-lc-lfE" secondAttribute="centerX" id="Ize-j9-dK6"/>
+                            <constraint firstItem="WO6-Tu-XHa" firstAttribute="trailing" secondItem="6pM-Vw-2gU" secondAttribute="trailing" constant="20" id="Omg-Fi-w8J"/>
+                            <constraint firstItem="eTB-HN-dAi" firstAttribute="leading" secondItem="WO6-Tu-XHa" secondAttribute="leading" id="QSy-TL-2C5"/>
+                            <constraint firstItem="WO6-Tu-XHa" firstAttribute="bottom" secondItem="eTB-HN-dAi" secondAttribute="bottom" id="gyZ-Zm-Ukp"/>
+                            <constraint firstItem="WO6-Tu-XHa" firstAttribute="trailing" secondItem="eTB-HN-dAi" secondAttribute="trailing" id="y6w-Zd-vaw"/>
+                            <constraint firstItem="6pM-Vw-2gU" firstAttribute="leading" secondItem="WO6-Tu-XHa" secondAttribute="leading" constant="20" id="yQ9-Pk-sA1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WO6-Tu-XHa"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhO-Rm-9YG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-766" y="350"/>
+            <point key="canvasLocation" x="-767.20000000000005" y="349.47526236881561"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="qUz-s8-TZ2">
+            <objects>
+                <viewController id="EP0-eJ-o7l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VPj-cm-TQU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="av1-qM-JVH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="iwM-FP-cat"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd5-fV-iaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-276" y="1742"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="qA7-iK-pN3">
+            <objects>
+                <viewController id="Tak-b9-40K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jko-Tp-ng7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qXS-Kc-uZr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="ECH-j6-Sjs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zud-h0-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-276" y="1101"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CDg-yR-89z">
+            <objects>
+                <tabBarController id="6xI-QI-UVS" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MCm-M2-FNK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Tak-b9-40K" kind="relationship" relationship="viewControllers" id="Mzd-Dg-s0R"/>
+                        <segue destination="EP0-eJ-o7l" kind="relationship" relationship="viewControllers" id="goM-ad-e62"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2y-vT-Ygx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1671" y="1511"/>
         </scene>
         <!--Onboarding View Controller3-->
         <scene sceneID="t58-O5-2cl">
@@ -50,7 +127,31 @@
                     <view key="view" contentMode="scaleToFill" id="SsY-xi-O1i" customClass="OnboardingView3" customModule="HappyFoods" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding3Background.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="eHx-l1-nna">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-3J-P5V">
+                                <rect key="frame" x="20" y="125" width="335" height="316"/>
+                                <string key="text">Don’t see what you want? Pinch out to add more foods using camera or camera roll. 
+
+Aim for 8 tries a week. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WEb-3J-P5V" firstAttribute="leading" secondItem="8OY-W6-M5V" secondAttribute="leading" constant="20" id="BQJ-iR-hcW"/>
+                            <constraint firstItem="WEb-3J-P5V" firstAttribute="centerY" secondItem="SsY-xi-O1i" secondAttribute="centerY" id="Gg5-Fh-AYA"/>
+                            <constraint firstItem="eHx-l1-nna" firstAttribute="leading" secondItem="8OY-W6-M5V" secondAttribute="leading" id="LXe-8z-atO"/>
+                            <constraint firstItem="8OY-W6-M5V" firstAttribute="trailing" secondItem="WEb-3J-P5V" secondAttribute="trailing" constant="20" id="SLK-vC-abz"/>
+                            <constraint firstItem="8OY-W6-M5V" firstAttribute="bottom" secondItem="eHx-l1-nna" secondAttribute="bottom" id="eVP-Gr-Rx6"/>
+                            <constraint firstItem="eHx-l1-nna" firstAttribute="top" secondItem="8OY-W6-M5V" secondAttribute="top" id="ivd-1B-iQd"/>
+                            <constraint firstItem="WEb-3J-P5V" firstAttribute="centerX" secondItem="SsY-xi-O1i" secondAttribute="centerX" id="nHM-9A-VVC"/>
+                            <constraint firstItem="8OY-W6-M5V" firstAttribute="trailing" secondItem="eHx-l1-nna" secondAttribute="trailing" id="pOz-sQ-ulI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8OY-W6-M5V"/>
                     </view>
                 </viewController>
@@ -74,4 +175,8 @@
             <point key="canvasLocation" x="-2500" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Onboarding2Background.png" width="3023" height="4031"/>
+        <image name="Onboarding3Background.JPG" width="3024" height="4032"/>
+    </resources>
 </document>

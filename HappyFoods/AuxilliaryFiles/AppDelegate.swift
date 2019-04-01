@@ -33,10 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController = initialViewController
 //        self.window?.makeKeyAndVisible()
 //
-                let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+             //   let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
 
                 /// for testing
-           //  let launchedBefore = false
+             let launchedBefore = false
 
                 if launchedBefore{
                     self.window = UIWindow(frame: UIScreen.main.bounds)
