@@ -5,9 +5,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Meals" representedClassName="Meals" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="HistoricalTriedFood" representedClassName="HistoricalTriedFood" syncable="YES" codeGenerationType="class">
+        <attribute name="imageFileName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="TriedFood" representedClassName="TriedFood" syncable="YES" codeGenerationType="class">
         <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -15,7 +14,7 @@
     </entity>
     <elements>
         <element name="Food" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Meals" positionX="-54" positionY="-9" width="128" height="75"/>
         <element name="TriedFood" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="HistoricalTriedFood" positionX="-45" positionY="9" width="128" height="60"/>
     </elements>
 </model>

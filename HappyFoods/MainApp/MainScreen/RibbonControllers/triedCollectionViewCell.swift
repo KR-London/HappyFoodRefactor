@@ -32,13 +32,7 @@ class triedCollectionViewCell: UICollectionViewCell {
         
         public func displayContent(image: String)
         {
-            //        if foodImage.image != nil
-            //        {
             foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
-            //}
-            // foodImage.image = UIImage(named: image)
-            //  foodName.text = title
-            // print("No ribbon should display \(title)")
         }
         
         func setup(){

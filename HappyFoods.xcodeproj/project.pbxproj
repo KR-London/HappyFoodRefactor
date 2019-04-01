@@ -258,6 +258,7 @@
 		4403E65E220AEEA9000B5BAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				44A5DF80223FA194008EF562 /* Extensions_UIView.swift */,
 				4403E65C220AEDE9000B5BAE /* Extensions_UIImage.swift */,
 				447ACD4F22341BB5001748D3 /* parseCSV.swift */,
 				44BCE7952242C53A00EF5C38 /* AppUtility.swift */,
@@ -296,7 +297,6 @@
 		44803C8621F1DB660053AECB = {
 			isa = PBXGroup;
 			children = (
-				44A5DF80223FA194008EF562 /* Extensions_UIView.swift */,
 				44803C9121F1DB660053AECB /* HappyFoods */,
 				447ACD7F22342BE2001748D3 /* FoodPhotos */,
 				4403E629220ADD76000B5BAE /* Backgrounds */,

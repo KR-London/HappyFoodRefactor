@@ -181,9 +181,21 @@ func appsAndBiscuits(imageName: String, image: UIImage, rating: Int){
         menuItem.name = imageName
         menuItem.rating = Int16(rating)
         saveItems()
+        
+        // if they indicate a definite prefernce - take this as a sign you liked it. Maybe as a sign you're just adding to database.
+        
+        if rating == 1 || rating == 3
+        {
+//            foodsTriedThisWeek =  [( imagePath, IndexPath.init(item: 99, section: 99), "fromCamera")] + (foodsTriedThisWeek ?? [])
+            
+            let newlyLoadedItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+            newlyLoadedItem.imageFileName = imagePath
+            newlyLoadedItem.dateTried = Date()
+            saveItems()
+        }
     }
     
-    /// if they indicate a definite prefernce - take this as a sign you liked it. Maybe as a sign you're just adding to database.
+//    / if they indicate a definite prefernce - take this as a sign you liked it. Maybe as a sign you're just adding to database.
 //
 //    if rating == 1 || rating == 3
 //    {

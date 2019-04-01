@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
 
         
-        print(datafilepath)
+        print(datafilepath!)
         
         let scrollingStackOfCollectionViews = setUpCollectionViewScrollingStack_noWideLayout()
         view.addSubview(scrollingStackOfCollectionViews)

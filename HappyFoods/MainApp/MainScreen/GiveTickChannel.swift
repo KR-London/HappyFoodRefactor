@@ -24,11 +24,6 @@ extension MainViewController : GiveTickChannel {
     }
     
     func giveTick(image_file_name: String) -> Int {
-        
-       tickChannel?.giveTick(image_file_name: image_file_name)
-        
-        //// shall i use this place to trigger the segue to the celebration screen, when the tried foods are filled up..?
-        
         return 0
     }
 }

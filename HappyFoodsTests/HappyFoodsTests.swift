@@ -11,7 +11,7 @@ import XCTest
 
 class HappyFoodsTests: XCTestCase {
     
-    var happyFoodUnderTest = MainView()
+   // var happyFoodUnderTest = MainView()
 
     override func setUp() {
     }

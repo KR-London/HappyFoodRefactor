@@ -46,8 +46,7 @@ class SwipeRateViewController: UIViewController {
             currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
             let image = UIImage(named: currentlyPicturedFood.image_file_name!)
             let maskingImage = UIImage(named: "MASK.png")
-            foodImage.image = maskImage(image: image!, mask: maskingImage!)
-            //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+           foodImage.image = maskImage(image: image!, mask: maskingImage!).resizeImage(targetSize: foodImage.image?.size ?? CGSize(width: 100, height: 100))
             
         }
 //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
@@ -126,6 +125,7 @@ class SwipeRateViewController: UIViewController {
         // foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
         
         let image = UIImage(named: currentlyPicturedFood.image_file_name!)
+            //?.resizeImageNoMargins(targetSize: CGSize(width: 180, height: 180))
         let maskingImage = UIImage(named: "MASK.png")
         foodImage.image = maskImage(image: image!, mask: maskingImage!)
     }
